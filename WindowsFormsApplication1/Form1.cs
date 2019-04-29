@@ -74,5 +74,11 @@ namespace WindowsFormsApplication1
 
         }
 
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Sign_Up new_account = new Sign_Up();
+            new_account.Show();
+        }
+
     }
 }
