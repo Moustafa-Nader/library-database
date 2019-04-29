@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UML.Properties
+namespace WindowsFormsApplication1.Properties
 {
 
 
