@@ -15,6 +15,7 @@ namespace WindowsFormsApplication1
         public Sign_Up()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -42,6 +43,11 @@ namespace WindowsFormsApplication1
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Sign_Up_Load(object sender, EventArgs e)
         {
 
         }

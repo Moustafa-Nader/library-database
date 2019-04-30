@@ -165,6 +165,7 @@
             this.ShowListButton.TabIndex = 1;
             this.ShowListButton.Text = "Show list of books";
             this.ShowListButton.UseVisualStyleBackColor = true;
+            this.ShowListButton.Click += new System.EventHandler(this.ShowListButton_Click);
             // 
             // ProfileIcon
             // 
@@ -385,6 +386,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.Student_Load);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfileIcon)).EndInit();

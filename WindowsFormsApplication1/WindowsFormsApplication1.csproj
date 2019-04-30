@@ -52,6 +52,12 @@
     <Compile Include="BrowseBook.Designer.cs">
       <DependentUpon>BrowseBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowListOfBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowListOfBooks.Designer.cs">
+      <DependentUpon>ShowListOfBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sign Up.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BrowseBook.resx">
       <DependentUpon>BrowseBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowListOfBooks.resx">
+      <DependentUpon>ShowListOfBooks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sign Up.resx">
       <DependentUpon>Sign Up.cs</DependentUpon>

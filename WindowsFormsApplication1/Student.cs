@@ -15,6 +15,7 @@ namespace WindowsFormsApplication1
         public Student()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -117,6 +118,19 @@ namespace WindowsFormsApplication1
             BrowseBook mybook = new BrowseBook();
             mybook.Show();
             this.Hide();
+
+        }
+
+        private void ShowListButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ShowListOfBooks mylist = new ShowListOfBooks();
+            mylist.Show();
+        }
+
+        private void Student_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

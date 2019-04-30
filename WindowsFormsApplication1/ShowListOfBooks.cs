@@ -10,12 +10,22 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace WindowsFormsApplication1
 {
-    public partial class BrowseBook : Form
+    public partial class ShowListOfBooks : Form
     {
-        public BrowseBook()
+        public ShowListOfBooks()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Normal;
+            string queu = "SELECT BOOK.ISBN,BOOK.BOOKNAME AS BookName,BOOK.PUBLICATIONDATE AS PublicationDate,AUTHORS.AUTHORFIRSTNAME as Author,  CATEGORY.CATEGORYNAME As Category FROM BOOK JOIN BOOKCATEGORIES ON BOOK.ISBN = BOOKCATEGORIES.ISBN JOIN CATEGORY ON BOOKCATEGORIES.CATEGORY_ID = CATEGORY.CATEGORY_ID JOIN AUTHORS ON BOOK.AUTHOR_ID = AUTHORS.AUTHOR_ID ";
+
+            SqlConnection myconnection = new SqlConnection("Data Source=DESKTOP-NF0CFJ8\\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True");
+            SqlCommand mycommand = new SqlCommand(queu, myconnection);
+            myconnection.Open();
+            SqlDataAdapter myadapter = new SqlDataAdapter(mycommand);
+            DataTable mytable = new DataTable();
+            myadapter.Fill(mytable);
+            dataGridView1.DataSource = mytable;
+            myconnection.Close();
         }
     
 
@@ -103,39 +113,13 @@ namespace WindowsFormsApplication1
 
         private void button2_Click_2(object sender, EventArgs e)
         {
-            string str = "";
-           // string isbnstr = ISBN.Text;
-            if (ISBN.Text != "") str = "where BOOK.ISBN = '" + ISBN.Text + "'";
-
-            if (BOOKNAME.Text != "" && str=="") str = "where BOOK.BOOKNAME = '" + BOOKNAME.Text + "'";
-            else if (BOOKNAME.Text != "" && str != "") str += " and BOOK.BOOKNAME = '" + BOOKNAME.Text + "'";
-
-            if (PUBLICATIONDATE.Text != "" && str == "") str = "where BOOK.PUBLICATIONDATE = '" + PUBLICATIONDATE.Text + "'";
-            else if (PUBLICATIONDATE.Text != "" && str != "") str += " and BOOK.PUBLICATIONDATE = '" + PUBLICATIONDATE.Text + "'";
-
-
-            if (AUTHORNAME.Text != "" && str == "") str = "where AUTHORS.AUTHORFIRSTNAME = '" + AUTHORNAME.Text + "'";
-            else if (AUTHORNAME.Text != "" && str != "") str += " and AUTHORS.AUTHORFIRSTNAME = '" + AUTHORNAME.Text + "'";
-
+          
             
-            if (CATEGORYNAME.Text != "" && str == "") str = "where CATEGORY.CATEGORYNAME = '" + CATEGORYNAME.Text + "'";
-            else if (CATEGORYNAME.Text != "" && str != "") str += " and CATEGORY.CATEGORYNAME = '" + CATEGORYNAME.Text + "'";
-
-            string queu = "SELECT BOOK.ISBN,BOOK.BOOKNAME AS BookName,BOOK.PUBLICATIONDATE AS PublicationDate,AUTHORS.AUTHORFIRSTNAME as Author,  CATEGORY.CATEGORYNAME As Category FROM BOOK JOIN BOOKCATEGORIES ON BOOK.ISBN = BOOKCATEGORIES.ISBN JOIN CATEGORY ON BOOKCATEGORIES.CATEGORY_ID = CATEGORY.CATEGORY_ID JOIN AUTHORS ON BOOK.AUTHOR_ID = AUTHORS.AUTHOR_ID ";
-            string qu = "select * from BOOK";
-            SqlConnection myconnection = new SqlConnection("Data Source=DESKTOP-NF0CFJ8\\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True");
-            SqlCommand mycommand = new SqlCommand(queu+str,myconnection);
-            myconnection.Open();
-            SqlDataAdapter myadapter = new SqlDataAdapter(mycommand);
-            DataTable mytable = new DataTable();
-            myadapter.Fill(mytable);
-            dataGridView1.DataSource = mytable;
-            myconnection.Close();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -148,7 +132,7 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void label1_Click_2(object sender, EventArgs e)
+        private void ShowListOfBooks_Load_1(object sender, EventArgs e)
         {
 
         }
