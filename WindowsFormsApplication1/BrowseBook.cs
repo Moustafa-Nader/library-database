@@ -116,7 +116,7 @@ namespace WindowsFormsApplication1
             if (AUTHORNAME.Text != "" && str == "") str = "where AUTHORS.AUTHORFIRSTNAME = '" + AUTHORNAME.Text + "'";
             else if (AUTHORNAME.Text != "" && str != "") str += " and AUTHORS.AUTHORFIRSTNAME = '" + AUTHORNAME.Text + "'";
 
-
+            
             if (CATEGORYNAME.Text != "" && str == "") str = "where CATEGORY.CATEGORYNAME = '" + CATEGORYNAME.Text + "'";
             else if (CATEGORYNAME.Text != "" && str != "") str += " and CATEGORY.CATEGORYNAME = '" + CATEGORYNAME.Text + "'";
 
