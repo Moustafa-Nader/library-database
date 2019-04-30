@@ -30,7 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Student));
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.UserCardExpiryDate = new System.Windows.Forms.Label();
             this.RentedBooksButton = new System.Windows.Forms.Button();
+            this.ExpirationDate = new System.Windows.Forms.Label();
             this.Slogan = new System.Windows.Forms.Label();
             this.UML = new System.Windows.Forms.Label();
             this.RentBookButton = new System.Windows.Forms.Button();
@@ -52,8 +54,6 @@
             this.Age = new System.Windows.Forms.Label();
             this.Level = new System.Windows.Forms.Label();
             this.UpdateButton = new System.Windows.Forms.Button();
-            this.ExpirationDate = new System.Windows.Forms.Label();
-            this.UserCardExpiryDate = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfileIcon)).BeginInit();
             this.UserPanel.SuspendLayout();
@@ -69,20 +69,45 @@
             this.MainPanel.Controls.Add(this.RentBookButton);
             this.MainPanel.Controls.Add(this.BrowseBooksButton);
             this.MainPanel.Controls.Add(this.ShowListButton);
-            this.MainPanel.Location = new System.Drawing.Point(236, 22);
+            this.MainPanel.Location = new System.Drawing.Point(210, 18);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(496, 446);
+            this.MainPanel.Size = new System.Drawing.Size(441, 357);
             this.MainPanel.TabIndex = 1;
             this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // UserCardExpiryDate
+            // 
+            this.UserCardExpiryDate.BackColor = System.Drawing.Color.Transparent;
+            this.UserCardExpiryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserCardExpiryDate.ForeColor = System.Drawing.Color.Gray;
+            this.UserCardExpiryDate.Location = new System.Drawing.Point(398, 335);
+            this.UserCardExpiryDate.Name = "UserCardExpiryDate";
+            this.UserCardExpiryDate.Size = new System.Drawing.Size(40, 14);
+            this.UserCardExpiryDate.TabIndex = 14;
+            this.UserCardExpiryDate.Text = "xDate";
+            // 
             // RentedBooksButton
             // 
-            this.RentedBooksButton.Location = new System.Drawing.Point(134, 281);
+            this.RentedBooksButton.Location = new System.Drawing.Point(119, 225);
+            this.RentedBooksButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RentedBooksButton.Name = "RentedBooksButton";
-            this.RentedBooksButton.Size = new System.Drawing.Size(224, 31);
+            this.RentedBooksButton.Size = new System.Drawing.Size(199, 25);
             this.RentedBooksButton.TabIndex = 5;
             this.RentedBooksButton.Text = "Rented books";
             this.RentedBooksButton.UseVisualStyleBackColor = true;
+            // 
+            // ExpirationDate
+            // 
+            this.ExpirationDate.AutoSize = true;
+            this.ExpirationDate.BackColor = System.Drawing.Color.Transparent;
+            this.ExpirationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpirationDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.ExpirationDate.Location = new System.Drawing.Point(339, 335);
+            this.ExpirationDate.Name = "ExpirationDate";
+            this.ExpirationDate.Size = new System.Drawing.Size(61, 13);
+            this.ExpirationDate.TabIndex = 6;
+            this.ExpirationDate.Text = "Expiry Date";
             // 
             // Slogan
             // 
@@ -90,9 +115,9 @@
             this.Slogan.BackColor = System.Drawing.Color.Transparent;
             this.Slogan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Slogan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.Slogan.Location = new System.Drawing.Point(25, 107);
+            this.Slogan.Location = new System.Drawing.Point(22, 86);
             this.Slogan.Name = "Slogan";
-            this.Slogan.Size = new System.Drawing.Size(411, 17);
+            this.Slogan.Size = new System.Drawing.Size(348, 15);
             this.Slogan.TabIndex = 4;
             this.Slogan.Text = "Use our services to enrich your research and save yourself time";
             this.Slogan.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -103,36 +128,40 @@
             this.UML.BackColor = System.Drawing.Color.Transparent;
             this.UML.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UML.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.UML.Location = new System.Drawing.Point(168, 38);
+            this.UML.Location = new System.Drawing.Point(149, 30);
             this.UML.Name = "UML";
-            this.UML.Size = new System.Drawing.Size(156, 69);
+            this.UML.Size = new System.Drawing.Size(131, 58);
             this.UML.TabIndex = 2;
             this.UML.Text = "ULM";
             this.UML.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // RentBookButton
             // 
-            this.RentBookButton.Location = new System.Drawing.Point(134, 244);
+            this.RentBookButton.Location = new System.Drawing.Point(119, 195);
+            this.RentBookButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RentBookButton.Name = "RentBookButton";
-            this.RentBookButton.Size = new System.Drawing.Size(224, 31);
+            this.RentBookButton.Size = new System.Drawing.Size(199, 25);
             this.RentBookButton.TabIndex = 3;
             this.RentBookButton.Text = "Rent book";
             this.RentBookButton.UseVisualStyleBackColor = true;
             // 
             // BrowseBooksButton
             // 
-            this.BrowseBooksButton.Location = new System.Drawing.Point(134, 207);
+            this.BrowseBooksButton.Location = new System.Drawing.Point(119, 166);
+            this.BrowseBooksButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BrowseBooksButton.Name = "BrowseBooksButton";
-            this.BrowseBooksButton.Size = new System.Drawing.Size(224, 31);
+            this.BrowseBooksButton.Size = new System.Drawing.Size(199, 25);
             this.BrowseBooksButton.TabIndex = 2;
             this.BrowseBooksButton.Text = "Browse books ";
             this.BrowseBooksButton.UseVisualStyleBackColor = true;
+            this.BrowseBooksButton.Click += new System.EventHandler(this.BrowseBooksButton_Click);
             // 
             // ShowListButton
             // 
-            this.ShowListButton.Location = new System.Drawing.Point(134, 171);
+            this.ShowListButton.Location = new System.Drawing.Point(119, 137);
+            this.ShowListButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ShowListButton.Name = "ShowListButton";
-            this.ShowListButton.Size = new System.Drawing.Size(224, 31);
+            this.ShowListButton.Size = new System.Drawing.Size(199, 25);
             this.ShowListButton.TabIndex = 1;
             this.ShowListButton.Text = "Show list of books";
             this.ShowListButton.UseVisualStyleBackColor = true;
@@ -141,9 +170,10 @@
             // 
             this.ProfileIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ProfileIcon.Image = global::WindowsFormsApplication1.Properties.Resources.businessman1;
-            this.ProfileIcon.Location = new System.Drawing.Point(41, 20);
+            this.ProfileIcon.Location = new System.Drawing.Point(36, 16);
+            this.ProfileIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ProfileIcon.Name = "ProfileIcon";
-            this.ProfileIcon.Size = new System.Drawing.Size(86, 83);
+            this.ProfileIcon.Size = new System.Drawing.Size(76, 66);
             this.ProfileIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProfileIcon.TabIndex = 0;
             this.ProfileIcon.TabStop = false;
@@ -155,9 +185,9 @@
             this.Username.BackColor = System.Drawing.Color.Transparent;
             this.Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.Username.Location = new System.Drawing.Point(17, 106);
+            this.Username.Location = new System.Drawing.Point(15, 85);
             this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(135, 29);
+            this.Username.Size = new System.Drawing.Size(112, 25);
             this.Username.TabIndex = 1;
             this.Username.Text = "xUsername";
             this.Username.Click += new System.EventHandler(this.label1_Click);
@@ -179,9 +209,10 @@
             this.UserPanel.Controls.Add(this.Username);
             this.UserPanel.Controls.Add(this.ProfileIcon);
             this.UserPanel.Controls.Add(this.UpdateButton);
-            this.UserPanel.Location = new System.Drawing.Point(28, 22);
+            this.UserPanel.Location = new System.Drawing.Point(25, 18);
+            this.UserPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UserPanel.Name = "UserPanel";
-            this.UserPanel.Size = new System.Drawing.Size(174, 446);
+            this.UserPanel.Size = new System.Drawing.Size(155, 357);
             this.UserPanel.TabIndex = 0;
             this.UserPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -190,9 +221,9 @@
             this.UserID.BackColor = System.Drawing.Color.Transparent;
             this.UserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserID.ForeColor = System.Drawing.Color.Gray;
-            this.UserID.Location = new System.Drawing.Point(21, 172);
+            this.UserID.Location = new System.Drawing.Point(19, 138);
             this.UserID.Name = "UserID";
-            this.UserID.Size = new System.Drawing.Size(106, 26);
+            this.UserID.Size = new System.Drawing.Size(94, 21);
             this.UserID.TabIndex = 13;
             this.UserID.Text = "xID";
             this.UserID.Click += new System.EventHandler(this.label11_Click);
@@ -202,9 +233,9 @@
             this.UserAge.BackColor = System.Drawing.Color.Transparent;
             this.UserAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserAge.ForeColor = System.Drawing.Color.Gray;
-            this.UserAge.Location = new System.Drawing.Point(17, 331);
+            this.UserAge.Location = new System.Drawing.Point(15, 265);
             this.UserAge.Name = "UserAge";
-            this.UserAge.Size = new System.Drawing.Size(106, 26);
+            this.UserAge.Size = new System.Drawing.Size(94, 21);
             this.UserAge.TabIndex = 12;
             this.UserAge.Text = "xAge";
             // 
@@ -213,9 +244,9 @@
             this.UserLevel.BackColor = System.Drawing.Color.Transparent;
             this.UserLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserLevel.ForeColor = System.Drawing.Color.Gray;
-            this.UserLevel.Location = new System.Drawing.Point(17, 276);
+            this.UserLevel.Location = new System.Drawing.Point(15, 221);
             this.UserLevel.Name = "UserLevel";
-            this.UserLevel.Size = new System.Drawing.Size(106, 26);
+            this.UserLevel.Size = new System.Drawing.Size(94, 21);
             this.UserLevel.TabIndex = 11;
             this.UserLevel.Text = "xLevel";
             // 
@@ -224,45 +255,49 @@
             this.UserDoB.BackColor = System.Drawing.Color.Transparent;
             this.UserDoB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserDoB.ForeColor = System.Drawing.Color.Gray;
-            this.UserDoB.Location = new System.Drawing.Point(17, 226);
+            this.UserDoB.Location = new System.Drawing.Point(15, 181);
             this.UserDoB.Name = "UserDoB";
-            this.UserDoB.Size = new System.Drawing.Size(106, 26);
+            this.UserDoB.Size = new System.Drawing.Size(94, 21);
             this.UserDoB.TabIndex = 10;
             this.UserDoB.Text = "xDoB";
             this.UserDoB.Click += new System.EventHandler(this.label8_Click);
             // 
             // AgeTextBox
             // 
-            this.AgeTextBox.Location = new System.Drawing.Point(17, 331);
+            this.AgeTextBox.Location = new System.Drawing.Point(15, 265);
+            this.AgeTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AgeTextBox.Name = "AgeTextBox";
-            this.AgeTextBox.Size = new System.Drawing.Size(106, 26);
+            this.AgeTextBox.Size = new System.Drawing.Size(95, 22);
             this.AgeTextBox.TabIndex = 9;
             this.AgeTextBox.Visible = false;
             this.AgeTextBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // LevelTextBox
             // 
-            this.LevelTextBox.Location = new System.Drawing.Point(17, 276);
+            this.LevelTextBox.Location = new System.Drawing.Point(15, 221);
+            this.LevelTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LevelTextBox.Name = "LevelTextBox";
-            this.LevelTextBox.Size = new System.Drawing.Size(106, 26);
+            this.LevelTextBox.Size = new System.Drawing.Size(95, 22);
             this.LevelTextBox.TabIndex = 8;
             this.LevelTextBox.Visible = false;
             this.LevelTextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // DoBTextBox
             // 
-            this.DoBTextBox.Location = new System.Drawing.Point(17, 226);
+            this.DoBTextBox.Location = new System.Drawing.Point(15, 181);
+            this.DoBTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DoBTextBox.Name = "DoBTextBox";
-            this.DoBTextBox.Size = new System.Drawing.Size(106, 26);
+            this.DoBTextBox.Size = new System.Drawing.Size(95, 22);
             this.DoBTextBox.TabIndex = 7;
             this.DoBTextBox.Visible = false;
             this.DoBTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(36, 386);
+            this.EditButton.Location = new System.Drawing.Point(32, 309);
+            this.EditButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(101, 32);
+            this.EditButton.Size = new System.Drawing.Size(90, 26);
             this.EditButton.TabIndex = 6;
             this.EditButton.Text = "Edit";
             this.EditButton.UseVisualStyleBackColor = true;
@@ -274,9 +309,9 @@
             this.ID.BackColor = System.Drawing.Color.Transparent;
             this.ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ID.Location = new System.Drawing.Point(13, 150);
+            this.ID.Location = new System.Drawing.Point(12, 120);
             this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(132, 22);
+            this.ID.Size = new System.Drawing.Size(107, 18);
             this.ID.TabIndex = 5;
             this.ID.Text = "Identity number";
             this.ID.Click += new System.EventHandler(this.label7_Click);
@@ -287,9 +322,9 @@
             this.DoB.BackColor = System.Drawing.Color.Transparent;
             this.DoB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DoB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.DoB.Location = new System.Drawing.Point(13, 200);
+            this.DoB.Location = new System.Drawing.Point(12, 160);
             this.DoB.Name = "DoB";
-            this.DoB.Size = new System.Drawing.Size(110, 22);
+            this.DoB.Size = new System.Drawing.Size(90, 18);
             this.DoB.TabIndex = 4;
             this.DoB.Text = "Date of Birth";
             this.DoB.Click += new System.EventHandler(this.label6_Click);
@@ -300,9 +335,9 @@
             this.Age.BackColor = System.Drawing.Color.Transparent;
             this.Age.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Age.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.Age.Location = new System.Drawing.Point(13, 306);
+            this.Age.Location = new System.Drawing.Point(12, 245);
             this.Age.Name = "Age";
-            this.Age.Size = new System.Drawing.Size(42, 22);
+            this.Age.Size = new System.Drawing.Size(33, 18);
             this.Age.TabIndex = 3;
             this.Age.Text = "Age";
             this.Age.Click += new System.EventHandler(this.label5_Click);
@@ -313,58 +348,37 @@
             this.Level.BackColor = System.Drawing.Color.Transparent;
             this.Level.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Level.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.Level.Location = new System.Drawing.Point(13, 254);
+            this.Level.Location = new System.Drawing.Point(12, 203);
             this.Level.Name = "Level";
-            this.Level.Size = new System.Drawing.Size(53, 22);
+            this.Level.Size = new System.Drawing.Size(42, 18);
             this.Level.TabIndex = 2;
             this.Level.Text = "Level";
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(36, 386);
+            this.UpdateButton.Location = new System.Drawing.Point(32, 309);
+            this.UpdateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(101, 32);
+            this.UpdateButton.Size = new System.Drawing.Size(90, 26);
             this.UpdateButton.TabIndex = 0;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Visible = false;
             this.UpdateButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ExpirationDate
-            // 
-            this.ExpirationDate.AutoSize = true;
-            this.ExpirationDate.BackColor = System.Drawing.Color.Transparent;
-            this.ExpirationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpirationDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ExpirationDate.Location = new System.Drawing.Point(381, 419);
-            this.ExpirationDate.Name = "ExpirationDate";
-            this.ExpirationDate.Size = new System.Drawing.Size(69, 15);
-            this.ExpirationDate.TabIndex = 6;
-            this.ExpirationDate.Text = "Expiry Date";
-            // 
-            // UserCardExpiryDate
-            // 
-            this.UserCardExpiryDate.BackColor = System.Drawing.Color.Transparent;
-            this.UserCardExpiryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserCardExpiryDate.ForeColor = System.Drawing.Color.Gray;
-            this.UserCardExpiryDate.Location = new System.Drawing.Point(448, 419);
-            this.UserCardExpiryDate.Name = "UserCardExpiryDate";
-            this.UserCardExpiryDate.Size = new System.Drawing.Size(45, 18);
-            this.UserCardExpiryDate.TabIndex = 14;
-            this.UserCardExpiryDate.Text = "xDate";
-            // 
             // Student
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.library;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(765, 495);
+            this.ClientSize = new System.Drawing.Size(680, 396);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.UserPanel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Student";

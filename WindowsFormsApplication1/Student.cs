@@ -111,5 +111,12 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void BrowseBooksButton_Click(object sender, EventArgs e)
+        {
+            BrowseBook mybook = new BrowseBook();
+            mybook.Show();
+            this.Hide();
+        }
     }
 }

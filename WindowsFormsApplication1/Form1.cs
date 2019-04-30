@@ -67,6 +67,7 @@ namespace WindowsFormsApplication1
         {
             Student stu = new Student();
             stu.Show();
+            this.Hide();
         }
 
         private void label4_Click(object sender, EventArgs e)
