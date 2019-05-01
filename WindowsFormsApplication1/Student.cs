@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,44 @@ namespace WindowsFormsApplication1
 {
     public partial class Student : Form
     {
+        SqlConnection con = new SqlConnection("Data Source=LAPTOP-VVA7D5A9\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+        SqlCommand comm = new SqlCommand();
         public Student()
         {
             InitializeComponent();
+            comm.Connection = con;
             this.WindowState = FormWindowState.Normal;
+            con.Open();
+            
+            //Setting the Username...
+            comm.CommandText = "Select Username " +
+                               "From ACCOUNT inner Join STUDENT " +
+                               "on ACCOUNT.USER_ID = STUDENT.USER_ID " +
+                               "where ACCOUNT.USER_ID = 6";
+            object temp = comm.ExecuteScalar();
+            Username.Text = temp.ToString();
+
+
+            //Setting User Level
+            comm.CommandText = "Select YEAR " +
+                               "From ACCOUNT inner Join STUDENT " +
+                               "on ACCOUNT.USER_ID = STUDENT.USER_ID " +
+                               "where ACCOUNT.USER_ID = 6";
+            temp = comm.ExecuteScalar();
+            UserLevel.Text = temp.ToString();
+
+            //Setting User Date of Birth
+            comm.CommandText = "Select DATEOFBIRTH " +
+                               "From ACCOUNT inner Join STUDENT " +
+                               "on ACCOUNT.USER_ID = STUDENT.USER_ID " +
+                               "where ACCOUNT.USER_ID = 6";
+            DateTime d = (DateTime)comm.ExecuteScalar();     //catching Date in DateTime Object then changed into string...
+            UserDoB.Text = d.ToShortDateString();
+
+            //Settng User ID
+            //Yet to be implemented with Access from Form 1
+
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -61,6 +96,12 @@ namespace WindowsFormsApplication1
             AgeTextBox.Visible = false;
             LevelTextBox.Visible = false;
             DoBTextBox.Visible = false;
+
+            
+
+            con.Open();
+            comm.CommandText = "update STUDENT set DATEOFBIRTH = " + UserDoB.Text + " , YEAR = " + UserLevel.Text + " where USER_ID = 6";
+            con.Close();
         }
 
         //Edit Button
@@ -131,6 +172,13 @@ namespace WindowsFormsApplication1
         private void Student_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void RentedBooksButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            RentedBooks f = new RentedBooks();
+            f.Show();
         }
     }
 }

@@ -96,6 +96,7 @@
             this.RentedBooksButton.TabIndex = 5;
             this.RentedBooksButton.Text = "Rented books";
             this.RentedBooksButton.UseVisualStyleBackColor = true;
+            this.RentedBooksButton.Click += new System.EventHandler(this.RentedBooksButton_Click);
             // 
             // ExpirationDate
             // 
