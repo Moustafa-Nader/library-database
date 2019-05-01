@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RentedBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RentedBooks.Designer.cs">
+      <DependentUpon>RentedBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrowseBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrowseBook.Designer.cs">
+      <DependentUpon>BrowseBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowListOfBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowListOfBooks.Designer.cs">
+      <DependentUpon>ShowListOfBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sign Up.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +84,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="RentedBooks.resx">
+      <DependentUpon>RentedBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrowseBook.resx">
+      <DependentUpon>BrowseBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowListOfBooks.resx">
+      <DependentUpon>ShowListOfBooks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sign Up.resx">
       <DependentUpon>Sign Up.cs</DependentUpon>
     </EmbeddedResource>
