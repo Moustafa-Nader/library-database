@@ -10,23 +10,29 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
-{
+{ 
+
     public partial class Student : Form
     {
+        
         SqlConnection con = new SqlConnection("Data Source=LAPTOP-VVA7D5A9\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
         SqlCommand comm = new SqlCommand();
+        static Form SignIn = Application.OpenForms["Form1"];
+        public string SignInID = ((Form1)SignIn).SignInID;
         public Student()
         {
             InitializeComponent();
             comm.Connection = con;
             this.WindowState = FormWindowState.Normal;
+
+
             con.Open();
             
             //Setting the Username...
             comm.CommandText = "Select Username " +
                                "From ACCOUNT inner Join STUDENT " +
                                "on ACCOUNT.USER_ID = STUDENT.USER_ID " +
-                               "where ACCOUNT.USER_ID = 6";
+                               "where ACCOUNT.USER_ID = " + this.SignInID;
             object temp = comm.ExecuteScalar();
             Username.Text = temp.ToString();
 
@@ -35,7 +41,7 @@ namespace WindowsFormsApplication1
             comm.CommandText = "Select YEAR " +
                                "From ACCOUNT inner Join STUDENT " +
                                "on ACCOUNT.USER_ID = STUDENT.USER_ID " +
-                               "where ACCOUNT.USER_ID = 6";
+                               "where ACCOUNT.USER_ID = " + this.SignInID;
             temp = comm.ExecuteScalar();
             UserLevel.Text = temp.ToString();
 
@@ -43,12 +49,12 @@ namespace WindowsFormsApplication1
             comm.CommandText = "Select DATEOFBIRTH " +
                                "From ACCOUNT inner Join STUDENT " +
                                "on ACCOUNT.USER_ID = STUDENT.USER_ID " +
-                               "where ACCOUNT.USER_ID = 6";
+                               "where ACCOUNT.USER_ID = " + this.SignInID;
             DateTime d = (DateTime)comm.ExecuteScalar();     //catching Date in DateTime Object then changed into string...
             UserDoB.Text = d.ToShortDateString();
 
             //Settng User ID
-            //Yet to be implemented with Access from Form 1
+            UserID.Text = this.SignInID;
 
 
         }

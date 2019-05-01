@@ -18,13 +18,13 @@ namespace WindowsFormsApplication1
 
         string Username;
         string Password;
-        string SignInID;
+        public string SignInID;
         public Form1()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(400, 100);
-            con = new SqlConnection("Data Source=LAPTOP-1IE4L68L\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+            con = new SqlConnection("Data Source=LAPTOP-VVA7D5A9\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
             comm = new SqlCommand();
             comm.Connection = con;
             label5.Hide();
@@ -135,6 +135,11 @@ namespace WindowsFormsApplication1
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

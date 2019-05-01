@@ -45,7 +45,6 @@
             this.UserAge = new System.Windows.Forms.Label();
             this.UserLevel = new System.Windows.Forms.Label();
             this.UserDoB = new System.Windows.Forms.Label();
-            this.AgeTextBox = new System.Windows.Forms.TextBox();
             this.LevelTextBox = new System.Windows.Forms.TextBox();
             this.DoBTextBox = new System.Windows.Forms.TextBox();
             this.EditButton = new System.Windows.Forms.Button();
@@ -200,7 +199,6 @@
             this.UserPanel.Controls.Add(this.UserAge);
             this.UserPanel.Controls.Add(this.UserLevel);
             this.UserPanel.Controls.Add(this.UserDoB);
-            this.UserPanel.Controls.Add(this.AgeTextBox);
             this.UserPanel.Controls.Add(this.LevelTextBox);
             this.UserPanel.Controls.Add(this.DoBTextBox);
             this.UserPanel.Controls.Add(this.EditButton);
@@ -235,7 +233,7 @@
             this.UserAge.BackColor = System.Drawing.Color.Transparent;
             this.UserAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserAge.ForeColor = System.Drawing.Color.Gray;
-            this.UserAge.Location = new System.Drawing.Point(15, 265);
+            this.UserAge.Location = new System.Drawing.Point(18, 263);
             this.UserAge.Name = "UserAge";
             this.UserAge.Size = new System.Drawing.Size(94, 21);
             this.UserAge.TabIndex = 12;
@@ -263,16 +261,6 @@
             this.UserDoB.TabIndex = 10;
             this.UserDoB.Text = "xDoB";
             this.UserDoB.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // AgeTextBox
-            // 
-            this.AgeTextBox.Location = new System.Drawing.Point(15, 265);
-            this.AgeTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AgeTextBox.Name = "AgeTextBox";
-            this.AgeTextBox.Size = new System.Drawing.Size(95, 22);
-            this.AgeTextBox.TabIndex = 9;
-            this.AgeTextBox.Visible = false;
-            this.AgeTextBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // LevelTextBox
             // 
@@ -415,7 +403,6 @@
         private System.Windows.Forms.Label Level;
         private System.Windows.Forms.Button RentedBooksButton;
         private System.Windows.Forms.Button EditButton;
-        private System.Windows.Forms.TextBox AgeTextBox;
         private System.Windows.Forms.TextBox LevelTextBox;
         private System.Windows.Forms.TextBox DoBTextBox;
         private System.Windows.Forms.Label UserAge;
