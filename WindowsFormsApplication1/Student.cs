@@ -14,8 +14,8 @@ namespace WindowsFormsApplication1
 
     public partial class Student : Form
     {
-        
-        SqlConnection con = new SqlConnection("Data Source=LAPTOP-VVA7D5A9\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-NF0CFJ8\\SQLEXPRESS;Initial Catalog=mylib;Integrated Security=True");
         SqlCommand comm = new SqlCommand();
         static Form SignIn = Application.OpenForms["Form1"];
         public string SignInID = ((Form1)SignIn).SignInID;
@@ -55,7 +55,7 @@ namespace WindowsFormsApplication1
 
             //Settng User ID
             UserID.Text = this.SignInID;
-
+            con.Close();
 
         }
 
@@ -86,8 +86,8 @@ namespace WindowsFormsApplication1
         //Update Button
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(AgeTextBox.Text))
-                UserAge.Text = AgeTextBox.Text;
+            //if (!string.IsNullOrWhiteSpace(AgeTextBox.Text))
+             //   UserAge.Text = AgeTextBox.Text;
             if (!string.IsNullOrWhiteSpace(DoBTextBox.Text))
                 UserDoB.Text = DoBTextBox.Text;
             if (!string.IsNullOrWhiteSpace(LevelTextBox.Text))
@@ -99,7 +99,7 @@ namespace WindowsFormsApplication1
             UserLevel.Visible = true;
 
             UpdateButton.Visible = false;
-            AgeTextBox.Visible = false;
+           // AgeTextBox.Visible = false;
             LevelTextBox.Visible = false;
             DoBTextBox.Visible = false;
 
@@ -119,7 +119,7 @@ namespace WindowsFormsApplication1
             UserLevel.Visible = false;
 
             UpdateButton.Visible = true;
-            AgeTextBox.Visible = true;
+           // AgeTextBox.Visible = true;
             LevelTextBox.Visible = true;
             DoBTextBox.Visible = true;
 
@@ -165,6 +165,7 @@ namespace WindowsFormsApplication1
             BrowseBook mybook = new BrowseBook();
             mybook.Show();
             this.Hide();
+            FormState.PreviousPage = this;
 
         }
 
@@ -173,6 +174,7 @@ namespace WindowsFormsApplication1
             this.Hide();
             ShowListOfBooks mylist = new ShowListOfBooks();
             mylist.Show();
+            FormState.PreviousPage = this;
         }
 
         private void Student_Load(object sender, EventArgs e)
@@ -182,9 +184,32 @@ namespace WindowsFormsApplication1
 
         private void RentedBooksButton_Click(object sender, EventArgs e)
         {
-            Hide();
+           
             RentedBooks f = new RentedBooks();
             f.Show();
+            this.Hide();
+            FormState.PreviousPage = this;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            
+            this.Hide();
+            Form1 Mymain = new Form1();
+            Mymain.Show();
+        }
+
+        private void RentBookButton_Click(object sender, EventArgs e)
+        {
+            RentedBooks myrents = new RentedBooks();
+            myrents.Show();
+            this.Hide();
+            FormState.PreviousPage = this;
+        }
+
+        private void Student_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

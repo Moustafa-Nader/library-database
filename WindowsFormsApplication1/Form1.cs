@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
+  
     public partial class Form1 : Form
     {
         SqlConnection con;
@@ -22,9 +23,12 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(400, 100);
-            con = new SqlConnection("Data Source=LAPTOP-VVA7D5A9\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+            con = new SqlConnection("Data Source=DESKTOP-NF0CFJ8\\SQLEXPRESS;Initial Catalog=mylib;Integrated Security=True");
+
+     
             comm = new SqlCommand();
             comm.Connection = con;
             label5.Hide();
@@ -112,6 +116,9 @@ namespace WindowsFormsApplication1
                     SignInID = temp.ToString();
                     stu = new Student();
                     stu.Show();
+                    this.Hide();
+                    FormState.PreviousPage = this;
+                    
                 }
             }
             con.Close();
@@ -127,6 +134,7 @@ namespace WindowsFormsApplication1
             Sign_Up new_account = new Sign_Up(this);
             new_account.Show();
             Hide();
+         
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -143,5 +151,16 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
     }
+    public static class FormState
+    {
+        public static Form PreviousPage;
+        
+    }
+   
 }

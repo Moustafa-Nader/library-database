@@ -68,6 +68,8 @@ namespace WindowsFormsApplication1
         {
             Student stu = new Student();
             stu.Show();
+            this.Hide();
+            FormState.PreviousPage = this;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -122,7 +124,7 @@ namespace WindowsFormsApplication1
 
             string queu = "SELECT BOOK.ISBN,BOOK.BOOKNAME AS BookName,BOOK.PUBLICATIONDATE AS PublicationDate,AUTHORS.AUTHORFIRSTNAME as Author,  CATEGORY.CATEGORYNAME As Category FROM BOOK JOIN BOOKCATEGORIES ON BOOK.ISBN = BOOKCATEGORIES.ISBN JOIN CATEGORY ON BOOKCATEGORIES.CATEGORY_ID = CATEGORY.CATEGORY_ID JOIN AUTHORS ON BOOK.AUTHOR_ID = AUTHORS.AUTHOR_ID ";
             string qu = "select * from BOOK";
-            SqlConnection myconnection = new SqlConnection("Data Source=DESKTOP-NF0CFJ8\\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True");
+            SqlConnection myconnection = new SqlConnection("Data Source=DESKTOP-NF0CFJ8\\SQLEXPRESS;Initial Catalog=mylib;Integrated Security=True");
             SqlCommand mycommand = new SqlCommand(queu+str,myconnection);
             myconnection.Open();
             SqlDataAdapter myadapter = new SqlDataAdapter(mycommand);
@@ -155,6 +157,13 @@ namespace WindowsFormsApplication1
         private void BrowseBook_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            FormState.PreviousPage.Show();
+            this.Hide();
+            FormState.PreviousPage = this;
         }
     }
 }

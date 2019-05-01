@@ -13,7 +13,7 @@ namespace WindowsFormsApplication1
 {
     public partial class Sign_Up : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=LAPTOP-1IE4L68L\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-NF0CFJ8\\SQLEXPRESS;Initial Catalog=mylib;Integrated Security=True");
         SqlCommand comm = new SqlCommand();
         SqlCommand comm2 = new SqlCommand();
         Form1 form1 = new Form1();
@@ -382,6 +382,13 @@ namespace WindowsFormsApplication1
         private void Sign_Up_FormClosing(object sender, FormClosingEventArgs e)
         {
             form1.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormState.PreviousPage.Show();
+            this.Hide();
+            FormState.PreviousPage = this;
         }
     }
 }

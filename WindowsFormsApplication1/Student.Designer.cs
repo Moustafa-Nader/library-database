@@ -53,6 +53,7 @@
             this.Age = new System.Windows.Forms.Label();
             this.Level = new System.Windows.Forms.Label();
             this.UpdateButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfileIcon)).BeginInit();
             this.UserPanel.SuspendLayout();
@@ -68,10 +69,10 @@
             this.MainPanel.Controls.Add(this.RentBookButton);
             this.MainPanel.Controls.Add(this.BrowseBooksButton);
             this.MainPanel.Controls.Add(this.ShowListButton);
-            this.MainPanel.Location = new System.Drawing.Point(210, 18);
+            this.MainPanel.Location = new System.Drawing.Point(210, 11);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(441, 357);
+            this.MainPanel.Size = new System.Drawing.Size(441, 349);
             this.MainPanel.TabIndex = 1;
             this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -80,7 +81,7 @@
             this.UserCardExpiryDate.BackColor = System.Drawing.Color.Transparent;
             this.UserCardExpiryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserCardExpiryDate.ForeColor = System.Drawing.Color.Gray;
-            this.UserCardExpiryDate.Location = new System.Drawing.Point(398, 335);
+            this.UserCardExpiryDate.Location = new System.Drawing.Point(398, 330);
             this.UserCardExpiryDate.Name = "UserCardExpiryDate";
             this.UserCardExpiryDate.Size = new System.Drawing.Size(40, 14);
             this.UserCardExpiryDate.TabIndex = 14;
@@ -103,7 +104,7 @@
             this.ExpirationDate.BackColor = System.Drawing.Color.Transparent;
             this.ExpirationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExpirationDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ExpirationDate.Location = new System.Drawing.Point(339, 335);
+            this.ExpirationDate.Location = new System.Drawing.Point(331, 330);
             this.ExpirationDate.Name = "ExpirationDate";
             this.ExpirationDate.Size = new System.Drawing.Size(61, 13);
             this.ExpirationDate.TabIndex = 6;
@@ -144,6 +145,7 @@
             this.RentBookButton.TabIndex = 3;
             this.RentBookButton.Text = "Rent book";
             this.RentBookButton.UseVisualStyleBackColor = true;
+            this.RentBookButton.Click += new System.EventHandler(this.RentBookButton_Click);
             // 
             // BrowseBooksButton
             // 
@@ -209,10 +211,10 @@
             this.UserPanel.Controls.Add(this.Username);
             this.UserPanel.Controls.Add(this.ProfileIcon);
             this.UserPanel.Controls.Add(this.UpdateButton);
-            this.UserPanel.Location = new System.Drawing.Point(25, 18);
+            this.UserPanel.Location = new System.Drawing.Point(25, 11);
             this.UserPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UserPanel.Name = "UserPanel";
-            this.UserPanel.Size = new System.Drawing.Size(155, 357);
+            this.UserPanel.Size = new System.Drawing.Size(155, 349);
             this.UserPanel.TabIndex = 0;
             this.UserPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -356,6 +358,16 @@
             this.UpdateButton.Visible = false;
             this.UpdateButton.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(566, 365);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 29);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Sign Out";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -363,6 +375,7 @@
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.library;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(680, 396);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.UserPanel);
             this.DoubleBuffered = true;
@@ -375,6 +388,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Student_FormClosing);
             this.Load += new System.EventHandler(this.Student_Load);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
@@ -411,5 +425,6 @@
         private System.Windows.Forms.Label UserID;
         private System.Windows.Forms.Label UserCardExpiryDate;
         private System.Windows.Forms.Label ExpirationDate;
+        private System.Windows.Forms.Button button1;
     }
 }
