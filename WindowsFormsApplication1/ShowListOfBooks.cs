@@ -136,5 +136,10 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -152,5 +152,10 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void BrowseBook_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
