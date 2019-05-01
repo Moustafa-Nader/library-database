@@ -13,8 +13,8 @@ namespace WindowsFormsApplication1
 {
     public partial class Sign_Up : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-NF0CFJ8\\SQLEXPRESS;Initial Catalog=mylib;Integrated Security=True");
-        SqlCommand comm = new SqlCommand();
+		SqlConnection con = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+		SqlCommand comm = new SqlCommand();
         SqlCommand comm2 = new SqlCommand();
         Form1 form1 = new Form1();
         public Sign_Up(Form1 prevForm)
@@ -384,11 +384,11 @@ namespace WindowsFormsApplication1
             form1.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            FormState.PreviousPage.Show();
-            this.Hide();
-            FormState.PreviousPage = this;
-        }
+		private void button2_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			Form1 myMain = new Form1();
+			myMain.Show();
+		}
     }
 }

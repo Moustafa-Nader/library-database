@@ -22,8 +22,8 @@ namespace WindowsFormsApplication1
                            "STUDENT.STUDENT_ID = RENTS.STUDENT_ID and " +
                            "BOOK.AUTHOR_ID = AUTHORS.AUTHOR_ID " +
                            "and STUDENT.STUDENT_ID = 5";
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-NF0CFJ8\\SQLEXPRESS;Initial Catalog=mylib;Integrated Security=True");
-            SqlCommand comm = new SqlCommand(Query, con);  //need to rename the Query Column Headings.....
+			SqlConnection con = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+			SqlCommand comm = new SqlCommand(Query, con);  //need to rename the Query Column Headings.....
             con.Open();
             SqlDataAdapter adapt = new SqlDataAdapter(comm);
             DataTable table = new DataTable();

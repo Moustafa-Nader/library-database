@@ -15,8 +15,8 @@ namespace WindowsFormsApplication1
     public partial class Student : Form
     {
 
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-NF0CFJ8\\SQLEXPRESS;Initial Catalog=mylib;Integrated Security=True");
-        SqlCommand comm = new SqlCommand();
+		SqlConnection con = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+		SqlCommand comm = new SqlCommand();
         static Form SignIn = Application.OpenForms["Form1"];
         public string SignInID = ((Form1)SignIn).SignInID;
         public Student()
