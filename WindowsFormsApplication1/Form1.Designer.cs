@@ -39,6 +39,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +47,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Window;
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -82,7 +84,7 @@
             this.linkLabel1.LinkColor = System.Drawing.Color.RoyalBlue;
             this.linkLabel1.Location = new System.Drawing.Point(162, 189);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(72, 21);
+            this.linkLabel1.Size = new System.Drawing.Size(62, 17);
             this.linkLabel1.TabIndex = 7;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Sign up";
@@ -142,16 +144,18 @@
             this.textBox2.Location = new System.Drawing.Point(123, 97);
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(111, 29);
+            this.textBox2.Size = new System.Drawing.Size(111, 25);
             this.textBox2.TabIndex = 1;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(123, 51);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(111, 29);
+            this.textBox1.Size = new System.Drawing.Size(111, 25);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -166,9 +170,19 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(96, 91);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 19);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "label5";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.library;
@@ -185,9 +199,9 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "University Name ";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -206,6 +220,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label5;
     }
 }
 

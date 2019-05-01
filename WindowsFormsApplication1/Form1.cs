@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,21 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
     {
+        SqlConnection con;
+        SqlCommand comm;
+
+        string Username;
+        string Password;
+        string SignInID;
         public Form1()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(400, 100);
+            con = new SqlConnection("Data Source=LAPTOP-1IE4L68L\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+            comm = new SqlCommand();
+            comm.Connection = con;
+            label5.Hide();
         }
     
 
@@ -65,8 +78,43 @@ namespace WindowsFormsApplication1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Student stu = new Student();
-            stu.Show();
+            Student stu;
+            
+
+            Username = textBox1.Text;
+            Password = textBox2.Text;
+
+            Console.WriteLine(Username + " " + Password);
+
+            con.Open();
+
+            comm.CommandText = "select * from ACCOUNT where USERNAME = '" + Username + "'";
+
+            Console.WriteLine(comm.CommandText);
+            if(comm.ExecuteScalar() == null)
+            {
+                label5.Text = "Username doesn't exist!";
+                label5.Show();
+            }
+            else
+            {
+                comm.CommandText = "select * from ACCOUNT where USERNAME = '" + Username + "' and PASSWORD = '" + Password + "'";
+                if(comm.ExecuteScalar() == null)
+                {
+                    label5.Text = "Incorrect Password!";
+                    label5.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Logic Successful!");
+                    comm.CommandText = "select USER_ID from ACCOUNT where USERNAME = '" + Username + "'";
+                    object temp = comm.ExecuteScalar();
+                    SignInID = temp.ToString();
+                    stu = new Student();
+                    stu.Show();
+                }
+            }
+            con.Close();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -76,9 +124,19 @@ namespace WindowsFormsApplication1
 
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Sign_Up new_account = new Sign_Up();
+            Sign_Up new_account = new Sign_Up(this);
             new_account.Show();
+            Hide();
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
