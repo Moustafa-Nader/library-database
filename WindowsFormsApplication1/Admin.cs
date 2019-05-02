@@ -69,7 +69,7 @@ namespace WindowsFormsApplication1
         {
             // Form SignIn = Application.OpenForms["Form1"];
             // string SignInID = ((Form1)SignIn).SignInID;
-            FormState.mainform.Show();
+            FormState.mainform.ShowAndEmpty();
            
             this.Hide();
         }

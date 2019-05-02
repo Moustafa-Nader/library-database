@@ -68,7 +68,7 @@ namespace WindowsFormsApplication1
                 // TRY TO FIND A WAY TO SELECT A CELL WITHOUT BREAKING
                 
                 
-                SqlConnection connection = new SqlConnection(connectionstring::myconnectionstring);
+                SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
                 connection.Open();
                 
                 //MessageBox.Show("cell " + cell);

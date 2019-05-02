@@ -1,4 +1,4 @@
-﻿namespace Managestud
+﻿namespace WindowsFormsApplication1
 {
     partial class ShowList
     {
@@ -38,11 +38,11 @@
             this.pASSWORDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aCCOUNTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uLMDataSet = new Managestud.ULMDataSet();
-            this.aCCOUNTTableAdapter = new Managestud.ULMDataSetTableAdapters.ACCOUNTTableAdapter();
+            //this.uLMDataSet = new Managestud.ULMDataSet();
+            //this.aCCOUNTTableAdapter = new Managestud.ULMDataSetTableAdapters.ACCOUNTTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCCOUNTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uLMDataSet)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.uLMDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -102,16 +102,16 @@
             // aCCOUNTBindingSource
             // 
             this.aCCOUNTBindingSource.DataMember = "ACCOUNT";
-            this.aCCOUNTBindingSource.DataSource = this.uLMDataSet;
+            //this.aCCOUNTBindingSource.DataSource = this.uLMDataSet;
             // 
             // uLMDataSet
             // 
-            this.uLMDataSet.DataSetName = "ULMDataSet";
-            this.uLMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.uLMDataSet.DataSetName = "ULMDataSet";
+            //this.uLMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // aCCOUNTTableAdapter
             // 
-            this.aCCOUNTTableAdapter.ClearBeforeFill = true;
+            //this.aCCOUNTTableAdapter.ClearBeforeFill = true;
             // 
             // ShowList
             // 
@@ -128,7 +128,7 @@
             this.Load += new System.EventHandler(this.ShowList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCCOUNTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uLMDataSet)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.uLMDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -136,9 +136,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private ULMDataSet uLMDataSet;
+        //private ULMDataSet uLMDataSet;
         private System.Windows.Forms.BindingSource aCCOUNTBindingSource;
-        private ULMDataSetTableAdapters.ACCOUNTTableAdapter aCCOUNTTableAdapter;
+        //private ULMDataSetTableAdapters.ACCOUNTTableAdapter aCCOUNTTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn uSERIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aDMINIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sTUDENTIDDataGridViewTextBoxColumn;

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace Managestud
+namespace WindowsFormsApplication1
 {
     public partial class ShowList : Form
     {
@@ -21,7 +21,7 @@ namespace Managestud
         private void ShowList_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'uLMDataSet.ACCOUNT' table. You can move, or remove it, as needed.
-            this.aCCOUNTTableAdapter.Fill(this.uLMDataSet.ACCOUNT);
+            //this.aCCOUNTTableAdapter.Fill(this.uLMDataSet.ACCOUNT);
 
         }
 
