@@ -34,6 +34,7 @@
             this.AddAuthor = new System.Windows.Forms.Button();
             this.ListofAuthors = new System.Windows.Forms.Button();
             this.DeleteAuthor = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,9 +46,10 @@
             this.MainPanel.Controls.Add(this.ListofAuthors);
             this.MainPanel.Controls.Add(this.DeleteAuthor);
             this.MainPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.MainPanel.Location = new System.Drawing.Point(221, 15);
+            this.MainPanel.Location = new System.Drawing.Point(196, 12);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(323, 464);
+            this.MainPanel.Size = new System.Drawing.Size(287, 371);
             this.MainPanel.TabIndex = 5;
             this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
             // 
@@ -57,9 +59,9 @@
             this.UML.BackColor = System.Drawing.Color.Transparent;
             this.UML.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UML.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.UML.Location = new System.Drawing.Point(81, 53);
+            this.UML.Location = new System.Drawing.Point(72, 42);
             this.UML.Name = "UML";
-            this.UML.Size = new System.Drawing.Size(156, 69);
+            this.UML.Size = new System.Drawing.Size(131, 58);
             this.UML.TabIndex = 9;
             this.UML.Text = "ULM";
             this.UML.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -67,9 +69,10 @@
             // AddAuthor
             // 
             this.AddAuthor.ForeColor = System.Drawing.Color.Black;
-            this.AddAuthor.Location = new System.Drawing.Point(44, 194);
+            this.AddAuthor.Location = new System.Drawing.Point(39, 155);
+            this.AddAuthor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddAuthor.Name = "AddAuthor";
-            this.AddAuthor.Size = new System.Drawing.Size(234, 35);
+            this.AddAuthor.Size = new System.Drawing.Size(208, 28);
             this.AddAuthor.TabIndex = 8;
             this.AddAuthor.Text = "Add Author";
             this.AddAuthor.UseVisualStyleBackColor = true;
@@ -78,9 +81,10 @@
             // ListofAuthors
             // 
             this.ListofAuthors.ForeColor = System.Drawing.Color.Black;
-            this.ListofAuthors.Location = new System.Drawing.Point(44, 153);
+            this.ListofAuthors.Location = new System.Drawing.Point(39, 122);
+            this.ListofAuthors.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ListofAuthors.Name = "ListofAuthors";
-            this.ListofAuthors.Size = new System.Drawing.Size(234, 35);
+            this.ListofAuthors.Size = new System.Drawing.Size(208, 28);
             this.ListofAuthors.TabIndex = 6;
             this.ListofAuthors.Text = "Show List";
             this.ListofAuthors.UseVisualStyleBackColor = true;
@@ -89,24 +93,37 @@
             // DeleteAuthor
             // 
             this.DeleteAuthor.ForeColor = System.Drawing.Color.Black;
-            this.DeleteAuthor.Location = new System.Drawing.Point(44, 235);
+            this.DeleteAuthor.Location = new System.Drawing.Point(39, 188);
+            this.DeleteAuthor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DeleteAuthor.Name = "DeleteAuthor";
-            this.DeleteAuthor.Size = new System.Drawing.Size(234, 32);
+            this.DeleteAuthor.Size = new System.Drawing.Size(208, 26);
             this.DeleteAuthor.TabIndex = 5;
             this.DeleteAuthor.Text = "Delete Author";
             this.DeleteAuthor.UseVisualStyleBackColor = true;
             this.DeleteAuthor.Click += new System.EventHandler(this.DeleteAuthor_Click);
             // 
+            // button2
+            // 
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(1, 1);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(61, 29);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "<";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // Manage_Authors
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.library;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(765, 494);
+            this.ClientSize = new System.Drawing.Size(680, 395);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.MainPanel);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Manage_Authors";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage_Authors";
@@ -124,5 +141,6 @@
         private System.Windows.Forms.Button AddAuthor;
         private System.Windows.Forms.Button ListofAuthors;
         private System.Windows.Forms.Button DeleteAuthor;
+        private System.Windows.Forms.Button button2;
     }
 }

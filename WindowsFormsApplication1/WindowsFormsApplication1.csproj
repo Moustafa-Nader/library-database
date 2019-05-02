@@ -46,6 +46,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Admin.designer.cs">
+      <DependentUpon>Add Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Author.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Author.designer.cs">
+      <DependentUpon>Add Author.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Book.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Book.designer.cs">
+      <DependentUpon>Add Book.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delete Author.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delete Author.designer.cs">
+      <DependentUpon>Delete Author.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delete Book.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delete Book.designer.cs">
+      <DependentUpon>Delete Book.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage Authors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage Authors.designer.cs">
+      <DependentUpon>Manage Authors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageBooks.designer.cs">
+      <DependentUpon>ManageBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="RentedBooks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +138,33 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Add Admin.resx">
+      <DependentUpon>Add Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Author.resx">
+      <DependentUpon>Add Author.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Book.resx">
+      <DependentUpon>Add Book.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delete Author.resx">
+      <DependentUpon>Delete Author.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delete Book.resx">
+      <DependentUpon>Delete Book.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage Authors.resx">
+      <DependentUpon>Manage Authors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageBooks.resx">
+      <DependentUpon>ManageBooks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RentedBooks.resx">
       <DependentUpon>RentedBooks.cs</DependentUpon>
     </EmbeddedResource>
