@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.DataGridView = new System.Windows.Forms.DataGridView();
             this.AdminID_TextBox = new System.Windows.Forms.TextBox();
             this.ADMIN_ID = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.LastName = new System.Windows.Forms.Label();
             this.FirstName = new System.Windows.Forms.Label();
             this.AuthorUserID = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +66,17 @@
             this.MainPanel.Size = new System.Drawing.Size(659, 376);
             this.MainPanel.TabIndex = 5;
             this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
+            // 
+            // button2
+            // 
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(61, 29);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "<";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // DataGridView
             // 
@@ -170,17 +181,6 @@
             this.AuthorUserID.TabIndex = 10;
             this.AuthorUserID.Text = "User ID";
             // 
-            // button2
-            // 
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(61, 29);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "<";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // Add_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -193,6 +193,8 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Add_Admin";
             this.Text = "Add_Admin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Add_Admin_FormClosing);
+            this.Load += new System.EventHandler(this.Add_Admin_Load);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();

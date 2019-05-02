@@ -17,6 +17,9 @@ namespace WindowsFormsApplication1
         public Delete_Book()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(400, 100);
         }
 
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -26,7 +29,7 @@ namespace WindowsFormsApplication1
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
             connection.Open();
@@ -47,6 +50,23 @@ namespace WindowsFormsApplication1
         {
             MainPanel.BackColor = Color.FromArgb(180, 0, 0, 0);
 
+        }
+
+        private void Delete_Book_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormState.PreviousPage.Show();
+            this.Hide();
+
+        }
+
+        private void Delete_Book_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -16,6 +16,9 @@ namespace WindowsFormsApplication1
         public Add_Book()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(400, 100);
         }
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)
@@ -30,7 +33,7 @@ namespace WindowsFormsApplication1
 
         private void AddBookButton_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
             connection.Open();
             SqlCommand command = new SqlCommand("",connection);
            
@@ -59,7 +62,12 @@ namespace WindowsFormsApplication1
         {
             FormState.PreviousPage.Show();
             this.Hide();
-            FormState.PreviousPage = this;
+           
+        }
+
+        private void Add_Book_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

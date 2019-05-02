@@ -15,6 +15,9 @@ namespace WindowsFormsApplication1
         public Manage_Authors()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(400, 100);
         }
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)
@@ -39,6 +42,22 @@ namespace WindowsFormsApplication1
         {
             Delete_Author a1 = new Delete_Author();
             a1.Show();
+        }
+
+        private void Manage_Authors_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormState.AdminForm.Show();
+            this.Hide();
+        }
+
+        private void Manage_Authors_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

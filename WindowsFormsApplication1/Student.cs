@@ -15,7 +15,7 @@ namespace WindowsFormsApplication1
     public partial class Student : Form
     {
 
-		SqlConnection con = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+		SqlConnection con = new SqlConnection(connectionstring.myconnectionstring);
 		SqlCommand comm = new SqlCommand();
         static Form SignIn = Application.OpenForms["Form1"];
         public string SignInID = ((Form1)SignIn).SignInID;
@@ -24,6 +24,8 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             comm.Connection = con;
             this.WindowState = FormWindowState.Normal;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(400, 100);
 
 
             con.Open();
@@ -193,10 +195,10 @@ namespace WindowsFormsApplication1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            
+            FormState.mainform.Show();
             this.Hide();
-            Form1 Mymain = new Form1();
-            Mymain.Show();
+          
+            
         }
 
         private void RentBookButton_Click(object sender, EventArgs e)

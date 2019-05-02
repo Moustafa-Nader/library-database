@@ -125,6 +125,7 @@
             this.button2.TabIndex = 16;
             this.button2.Text = "<";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ManageBooks
             // 
@@ -142,6 +143,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageBooks";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageBooks_FormClosing);
+
+            this.Load += new System.EventHandler(this.ManageBooks_Load);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             this.ResumeLayout(false);

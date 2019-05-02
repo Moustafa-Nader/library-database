@@ -14,23 +14,28 @@ namespace WindowsFormsApplication1
   
     public partial class Form1 : Form
     {
-        SqlConnection con;
+        SqlConnection myconnection;
         SqlCommand comm;
-
         string Username;
         string Password;
         public string SignInID;
-        public Form1()
-        {
+        string serverName = "DESKTOP-NF0CFJ8\\SQLEXPRESS";
+        string Database = "mylib";
+        
+       
+           
+            public Form1()
+        { 
             InitializeComponent();
+            connectionstring.myconnectionstring = "Data Source=" + serverName + ";Initial Catalog=" + Database + ";Integrated Security=True";
             this.WindowState = FormWindowState.Normal;
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(400, 100);
-			con = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
-
+			myconnection  = new SqlConnection(connectionstring.myconnectionstring);
 			comm = new SqlCommand();
-            comm.Connection = con;
+            comm.Connection = myconnection;
             label5.Hide();
+            FormState.mainform = this;
         }
     
 
@@ -89,7 +94,7 @@ namespace WindowsFormsApplication1
 
             Console.WriteLine(Username + " " + Password);
 
-            con.Open();
+            myconnection.Open();
 
             comm.CommandText = "select * from ACCOUNT where USERNAME = '" + Username + "'";
 
@@ -120,7 +125,7 @@ namespace WindowsFormsApplication1
                     
                 }
             }
-            con.Close();
+            myconnection.Close();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -151,15 +156,23 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+            Admin myadmin = new Admin();
+            myadmin.Show();
+            this.Hide();
         }
     }
     public static class FormState
     {
         public static Form PreviousPage;
+        public static Form AdminForm;
+        public static Form mainform;
         
     }
-   
+    public static class connectionstring
+    {
+        public static string myconnectionstring;
+    }
 }

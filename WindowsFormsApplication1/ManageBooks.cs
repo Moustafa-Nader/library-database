@@ -15,6 +15,9 @@ namespace WindowsFormsApplication1
         public ManageBooks()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(400, 100);
         }
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)
@@ -26,24 +29,50 @@ namespace WindowsFormsApplication1
         {
             Add_Book book = new Add_Book();
             book.Show();
+            this.Hide();
+            FormState.PreviousPage = this;
         }
 
         private void ListofBooks_Click(object sender, EventArgs e)
         {
             Show_List list = new Show_List();
             list.Show();
+            this.Hide();
+            FormState.PreviousPage = this;
         }
 
         private void UpdateBook_Click(object sender, EventArgs e)
         {
             Update_Book book = new Update_Book();
             book.Show();
+            this.Hide();
+            FormState.PreviousPage = this;
         }
 
         private void ShowListButton_Click(object sender, EventArgs e)
         {
             Delete_Book book = new Delete_Book();
             book.Show();
+            this.Hide();
+            FormState.PreviousPage = this;
+        }
+
+        private void ManageBooks_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormState.AdminForm.Show();
+            this.Hide();
+        }
+
+        
+
+        private void ManageBooks_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_Book));
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.DataGridView = new System.Windows.Forms.DataGridView();
             this.ISBNTextBox = new System.Windows.Forms.TextBox();
             this.ISBN = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.Publisher = new System.Windows.Forms.Label();
             this.BookName = new System.Windows.Forms.Label();
             this.AuthorID = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +71,17 @@
             this.MainPanel.Size = new System.Drawing.Size(659, 376);
             this.MainPanel.TabIndex = 4;
             this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
+            // 
+            // button2
+            // 
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(3, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(61, 29);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "<";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // DataGridView
             // 
@@ -193,17 +204,6 @@
             this.AuthorID.TabIndex = 10;
             this.AuthorID.Text = "Author ID";
             // 
-            // button2
-            // 
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(3, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(61, 29);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "<";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // Add_Book
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -219,6 +219,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add_Book";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Add_Book_FormClosing);
             this.Load += new System.EventHandler(this.Add_Book_Load);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();

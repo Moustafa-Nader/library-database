@@ -13,13 +13,14 @@ namespace WindowsFormsApplication1
 {
     public partial class Sign_Up : Form
     {
-		SqlConnection con = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+		SqlConnection con = new SqlConnection(connectionstring.myconnectionstring);
 		SqlCommand comm = new SqlCommand();
         SqlCommand comm2 = new SqlCommand();
         Form1 form1 = new Form1();
         public Sign_Up(Form1 prevForm)
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(400, 100);
             comm.Connection = con;
@@ -381,7 +382,7 @@ namespace WindowsFormsApplication1
 
         private void Sign_Up_FormClosing(object sender, FormClosingEventArgs e)
         {
-            form1.Show();
+            Application.Exit();
         }
 
 		private void button2_Click(object sender, EventArgs e)

@@ -32,11 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Delete_Author));
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.AuthorID_TextBox = new System.Windows.Forms.TextBox();
             this.AuthorID = new System.Windows.Forms.Label();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.DataGridView = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +56,17 @@
             this.MainPanel.Size = new System.Drawing.Size(659, 376);
             this.MainPanel.TabIndex = 8;
             this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
+            // 
+            // button2
+            // 
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(61, 29);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "<";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // AuthorID_TextBox
             // 
@@ -117,16 +128,6 @@
             this.DataGridView.Size = new System.Drawing.Size(585, 238);
             this.DataGridView.TabIndex = 21;
             // 
-            // button2
-            // 
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(61, 29);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "<";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // Delete_Author
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -140,6 +141,8 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Delete_Author";
             this.Text = "Delete_Author";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Delete_Author_FormClosing);
+            this.Load += new System.EventHandler(this.Delete_Author_Load);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();

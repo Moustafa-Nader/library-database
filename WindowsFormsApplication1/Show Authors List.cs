@@ -16,6 +16,9 @@ namespace WindowsFormsApplication1
         public Show_Authors_List()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(400, 100);
         }
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)
@@ -25,7 +28,7 @@ namespace WindowsFormsApplication1
 
         private void ShowListButton_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
             connection.Open();
             SqlCommand command = new SqlCommand("", connection);
             command.CommandText = "select * from AUTHORS";
@@ -41,6 +44,22 @@ namespace WindowsFormsApplication1
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Show_Authors_List_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormState.PreviousPage.Show();
+            this.Hide();
+        }
+
+        private void Show_Authors_List_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

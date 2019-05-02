@@ -16,9 +16,11 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Normal;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(400, 100);
             string queu = "SELECT BOOK.ISBN,BOOK.BOOKNAME AS BookName,BOOK.PUBLICATIONDATE AS PublicationDate,AUTHORS.AUTHORFIRSTNAME as Author,  CATEGORY.CATEGORYNAME As Category FROM BOOK JOIN BOOKCATEGORIES ON BOOK.ISBN = BOOKCATEGORIES.ISBN JOIN CATEGORY ON BOOKCATEGORIES.CATEGORY_ID = CATEGORY.CATEGORY_ID JOIN AUTHORS ON BOOK.AUTHOR_ID = AUTHORS.AUTHOR_ID ";
 
-			SqlConnection myconnection = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+			SqlConnection myconnection = new SqlConnection(connectionstring.myconnectionstring);
 			SqlCommand mycommand = new SqlCommand(queu, myconnection);
             myconnection.Open();
             SqlDataAdapter myadapter = new SqlDataAdapter(mycommand);
@@ -145,7 +147,7 @@ namespace WindowsFormsApplication1
         {
             FormState.PreviousPage.Show();
             this.Hide();
-            FormState.PreviousPage = this;
+          
         }
 
         private void ShowListOfBooks_FormClosing(object sender, FormClosingEventArgs e)

@@ -16,11 +16,14 @@ namespace WindowsFormsApplication1
         public Show_List()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(400, 100);
         }
 
         private void ShowListButton_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
             connection.Open();
             SqlCommand command = new SqlCommand("", connection);
             command.CommandText = "select * from BOOK";
@@ -34,6 +37,22 @@ namespace WindowsFormsApplication1
         private void MainPanel_Paint(object sender, PaintEventArgs e)
         {
             MainPanel.BackColor = Color.FromArgb(180, 0, 0, 0);
+        }
+
+        private void Show_List_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormState.PreviousPage.Show();
+            this.Hide();
+        }
+
+        private void Show_List_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

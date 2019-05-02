@@ -17,12 +17,15 @@ namespace WindowsFormsApplication1
         public Update_Book()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(400, 100);
         }
 
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             cell = Convert.ToInt32(DataGridView.Rows[e.RowIndex].Cells["ISBN"].FormattedValue.ToString());
-            SqlConnection connection = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
             connection.Open();
             //if(DataGridView.SelectedCells[0].Value is int)
             //cell = Convert.ToInt32(DataGridView.SelectedCells[0].Value.ToString());
@@ -48,7 +51,7 @@ namespace WindowsFormsApplication1
 
         private void UpdateBookButton_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
             connection.Open();
             SqlCommand command = connection.CreateCommand();
             command.CommandType = CommandType.Text;
@@ -64,7 +67,7 @@ namespace WindowsFormsApplication1
 
         private void ShowList_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
             connection.Open();
             SqlCommand command = new SqlCommand("", connection);
             command.CommandText = "select * from BOOK";
@@ -73,6 +76,23 @@ namespace WindowsFormsApplication1
             data_adapter.Fill(data_table);
             DataGridView.DataSource = data_table;
             connection.Close();
+        }
+
+        private void Update_Book_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormState.PreviousPage.Show();
+            this.Hide();
+            
+        }
+
+        private void Update_Book_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
