@@ -33,8 +33,8 @@ namespace WindowsFormsApplication1
             //Setting the Username...
             comm.CommandText = "Select Username " +
                                "From ACCOUNT inner Join STUDENT " +
-                               "on ACCOUNT.USER_ID = STUDENT.USER_ID " +
-                               "where ACCOUNT.USER_ID = " + this.SignInID;
+                               "on ACCOUNT.STUDENT_ID = STUDENT.STUDENT_ID " +
+                               "where ACCOUNT.STUDENT_ID = " + this.SignInID;
             object temp = comm.ExecuteScalar();
             Username.Text = temp.ToString();
 
@@ -42,19 +42,26 @@ namespace WindowsFormsApplication1
             //Setting User Level
             comm.CommandText = "Select YEAR " +
                                "From ACCOUNT inner Join STUDENT " +
-                               "on ACCOUNT.USER_ID = STUDENT.USER_ID " +
-                               "where ACCOUNT.USER_ID = " + this.SignInID;
+                               "on ACCOUNT.STUDENT_ID = STUDENT.STUDENT_ID " +
+                               "where ACCOUNT.STUDENT_ID = " + this.SignInID;
             temp = comm.ExecuteScalar();
             UserLevel.Text = temp.ToString();
 
             //Setting User Date of Birth
             comm.CommandText = "Select DATEOFBIRTH " +
                                "From ACCOUNT inner Join STUDENT " +
-                               "on ACCOUNT.USER_ID = STUDENT.USER_ID " +
-                               "where ACCOUNT.USER_ID = " + this.SignInID;
+                               "on ACCOUNT.STUDENT_ID = STUDENT.STUDENT_ID " +
+                               "where ACCOUNT.STUDENT_ID = " + this.SignInID;
             DateTime d = (DateTime)comm.ExecuteScalar();     //catching Date in DateTime Object then changed into string...
             UserDoB.Text = d.ToShortDateString();
 
+            //Setting User Age
+            comm.CommandText = "Select Age " +
+                               "From ACCOUNT inner Join STUDENT " +
+                               "on ACCOUNT.STUDENT_ID = STUDENT.STUDENT_ID " +
+                               "where ACCOUNT.STUDENT_ID = " + this.SignInID;
+            temp = comm.ExecuteScalar();
+            UserLevel.Text = temp.ToString();
             //Settng User ID
             UserID.Text = this.SignInID;
             con.Close();
@@ -108,7 +115,7 @@ namespace WindowsFormsApplication1
             
 
             con.Open();
-            comm.CommandText = "update STUDENT set DATEOFBIRTH = " + UserDoB.Text + " , YEAR = " + UserLevel.Text + " where USER_ID = 6";
+            comm.CommandText = "update STUDENT set DATEOFBIRTH = " + UserDoB.Text + " , YEAR = " + UserLevel.Text + " where STUDENT.STUDNET_ID = " + SignIn;
             con.Close();
         }
 

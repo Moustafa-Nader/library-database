@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace Managestud
+namespace WindowsFormsApplication1
 {
     public partial class UpdateUser : Form
     {
@@ -25,7 +25,7 @@ namespace Managestud
         {
             
             // TODO: This line of code loads data into the 'uLMDataSet.STUDENT' table. You can move, or remove it, as needed.
-            this.sTUDENTTableAdapter.Fill(this.uLMDataSet.STUDENT);
+            //this.sTUDENTTableAdapter.Fill(this.uLMDataSet.STUDENT);
 
         }
 
@@ -43,7 +43,7 @@ namespace Managestud
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlconnection = new SqlConnection("Data Source=DESKTOP-SQ0RA99\\SQL;Initial Catalog=ULM;Integrated Security=True");
+            SqlConnection sqlconnection = new SqlConnection();
 
             SqlCommand sqlcommand = new SqlCommand();
             sqlcommand.Connection = sqlconnection;
@@ -66,7 +66,9 @@ namespace Managestud
             
             cell = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["user_id"].FormattedValue.ToString());
                 // TRY TO FIND A WAY TO SELECT A CELL WITHOUT BREAKING
-                SqlConnection connection = new SqlConnection("Data Source=DESKTOP-SQ0RA99\\SQL;Initial Catalog=ULM;Integrated Security=True");
+                
+                
+                SqlConnection connection = new SqlConnection(connectionstring::myconnectionstring);
                 connection.Open();
                 
                 //MessageBox.Show("cell " + cell);

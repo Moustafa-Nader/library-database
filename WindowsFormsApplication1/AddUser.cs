@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 
 
-namespace Managestud
+namespace WindowsFormsApplication1
 {
     public partial class AddUser : Form
     {
@@ -22,7 +22,7 @@ namespace Managestud
         private void AddUser_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'uLMDataSet.STUDENT' table. You can move, or remove it, as needed.
-            this.sTUDENTTableAdapter.Fill(this.uLMDataSet.STUDENT);
+            //this.sTUDENTTableAdapter.Fill(this.uLMDataSet.STUDENT);
 
         }
 

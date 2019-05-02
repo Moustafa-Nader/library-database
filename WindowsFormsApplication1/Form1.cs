@@ -19,8 +19,8 @@ namespace WindowsFormsApplication1
         string Username;
         string Password;
         public string SignInID;
-        string serverName = "DESKTOP-NF0CFJ8\\SQLEXPRESS";
-        string Database = "mylib";
+        string serverName = "LAPTOP-VVA7D5A9\\SQLEXPRESS";
+        string Database = "ULM";
         
        
            
@@ -115,7 +115,7 @@ namespace WindowsFormsApplication1
                 else
                 {
                     MessageBox.Show("Logic Successful!");
-                    comm.CommandText = "select USER_ID from ACCOUNT where USERNAME = '" + Username + "'";
+                    comm.CommandText = "select STUDENT_ID from ACCOUNT where USERNAME = '" + Username + "'";
                     object temp = comm.ExecuteScalar();
                     SignInID = temp.ToString();
                     stu = new Student();

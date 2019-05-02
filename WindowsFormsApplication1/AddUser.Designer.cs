@@ -1,4 +1,4 @@
-﻿namespace Managestud
+﻿namespace WindowsFormsApplication1
 {
     partial class AddUser
     {
@@ -32,9 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUser));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.uLMDataSet = new Managestud.ULMDataSet();
+            //this.uLMDataSet = new Managestud.ULMDataSet();
             this.sTUDENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sTUDENTTableAdapter = new Managestud.ULMDataSetTableAdapters.STUDENTTableAdapter();
+            //this.sTUDENTTableAdapter = new Managestud.ULMDataSetTableAdapters.STUDENTTableAdapter();
             this.sTUDENTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uSERIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sTUDENTFIRSTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +59,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uLMDataSet)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.uLMDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,17 +108,17 @@
             // 
             // uLMDataSet
             // 
-            this.uLMDataSet.DataSetName = "ULMDataSet";
-            this.uLMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.uLMDataSet.DataSetName = "ULMDataSet";
+            //this.uLMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sTUDENTBindingSource
             // 
             this.sTUDENTBindingSource.DataMember = "STUDENT";
-            this.sTUDENTBindingSource.DataSource = this.uLMDataSet;
+            //this.sTUDENTBindingSource.DataSource = this.uLMDataSet;
             // 
             // sTUDENTTableAdapter
             // 
-            this.sTUDENTTableAdapter.ClearBeforeFill = true;
+            //this.sTUDENTTableAdapter.ClearBeforeFill = true;
             // 
             // sTUDENTIDDataGridViewTextBoxColumn
             // 
@@ -316,7 +316,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uLMDataSet)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.uLMDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -326,9 +326,9 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private ULMDataSet uLMDataSet;
+        //private ULMDataSet uLMDataSet;
         private System.Windows.Forms.BindingSource sTUDENTBindingSource;
-        private ULMDataSetTableAdapters.STUDENTTableAdapter sTUDENTTableAdapter;
+        //private ULMDataSetTableAdapters.STUDENTTableAdapter sTUDENTTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn sTUDENTIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uSERIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sTUDENTFIRSTNAMEDataGridViewTextBoxColumn;

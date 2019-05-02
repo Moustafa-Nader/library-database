@@ -1,4 +1,4 @@
-﻿namespace Managestud
+﻿namespace WindowsFormsApplication1
 {
     partial class DeleteUser
     {
@@ -43,12 +43,12 @@
             this.dATEOFBIRTHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yEARDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sTUDENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uLMDataSet = new Managestud.ULMDataSet();
-            this.sTUDENTTableAdapter = new Managestud.ULMDataSetTableAdapters.STUDENTTableAdapter();
+            //this.uLMDataSet = new Managestud.ULMDataSet();
+            //this.sTUDENTTableAdapter = new Managestud.ULMDataSetTableAdapters.STUDENTTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uLMDataSet)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.uLMDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -155,16 +155,16 @@
             // sTUDENTBindingSource
             // 
             this.sTUDENTBindingSource.DataMember = "STUDENT";
-            this.sTUDENTBindingSource.DataSource = this.uLMDataSet;
+            //this.sTUDENTBindingSource.DataSource = this.uLMDataSet;
             // 
             // uLMDataSet
             // 
-            this.uLMDataSet.DataSetName = "ULMDataSet";
-            this.uLMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.uLMDataSet.DataSetName = "ULMDataSet";
+            //this.uLMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sTUDENTTableAdapter
             // 
-            this.sTUDENTTableAdapter.ClearBeforeFill = true;
+            //this.sTUDENTTableAdapter.ClearBeforeFill = true;
             // 
             // DeleteUser
             // 
@@ -183,7 +183,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uLMDataSet)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.uLMDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,9 +192,9 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private ULMDataSet uLMDataSet;
+        //private ULMDataSet uLMDataSet;
         private System.Windows.Forms.BindingSource sTUDENTBindingSource;
-        private ULMDataSetTableAdapters.STUDENTTableAdapter sTUDENTTableAdapter;
+        //private ULMDataSetTableAdapters.STUDENTTableAdapter sTUDENTTableAdapter;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;

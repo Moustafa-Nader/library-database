@@ -1,4 +1,4 @@
-﻿namespace Managestud
+﻿namespace WindowsFormsApplication1
 {
     partial class UpdateUser
     {
@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateUser));
-            this.uLMDataSet = new Managestud.ULMDataSet();
+            //this.uLMDataSet = new Managestud.ULMDataSet();
             this.sTUDENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sTUDENTTableAdapter = new Managestud.ULMDataSetTableAdapters.STUDENTTableAdapter();
+            //this.sTUDENTTableAdapter = new Managestud.ULMDataSetTableAdapters.STUDENTTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.sTUDENTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -52,7 +52,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.uLMDataSet)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.uLMDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -61,17 +61,17 @@
             // 
             // uLMDataSet
             // 
-            this.uLMDataSet.DataSetName = "ULMDataSet";
-            this.uLMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.uLMDataSet.DataSetName = "ULMDataSet";
+            // this.uLMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sTUDENTBindingSource
             // 
             this.sTUDENTBindingSource.DataMember = "STUDENT";
-            this.sTUDENTBindingSource.DataSource = this.uLMDataSet;
+            //this.sTUDENTBindingSource.DataSource = this.uLMDataSet;
             // 
             // sTUDENTTableAdapter
             // 
-            this.sTUDENTTableAdapter.ClearBeforeFill = true;
+            //this.sTUDENTTableAdapter.ClearBeforeFill = true;
             // 
             // panel1
             // 
@@ -110,7 +110,7 @@
             // sTUDENTBindingSource1
             // 
             this.sTUDENTBindingSource1.DataMember = "STUDENT";
-            this.sTUDENTBindingSource1.DataSource = this.uLMDataSet;
+            //this.sTUDENTBindingSource1.DataSource = this.uLMDataSet;
             // 
             // textBox1
             // 
@@ -271,7 +271,7 @@
             this.Name = "UpdateUser";
             this.Text = "Update user";
             this.Load += new System.EventHandler(this.UpdateUser_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.uLMDataSet)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.uLMDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -282,9 +282,9 @@
         }
 
         #endregion
-        private ULMDataSet uLMDataSet;
+        //private ULMDataSet uLMDataSet;
         private System.Windows.Forms.BindingSource sTUDENTBindingSource;
-        private ULMDataSetTableAdapters.STUDENTTableAdapter sTUDENTTableAdapter;
+        //private ULMDataSetTableAdapters.STUDENTTableAdapter sTUDENTTableAdapter;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

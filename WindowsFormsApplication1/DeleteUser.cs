@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Managestud
+namespace WindowsFormsApplication1
 {
     public partial class DeleteUser : Form
     {
@@ -21,7 +21,7 @@ namespace Managestud
         private void DeleteUser_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'uLMDataSet.STUDENT' table. You can move, or remove it, as needed.
-            this.sTUDENTTableAdapter.Fill(this.uLMDataSet.STUDENT);
+            //this.sTUDENTTableAdapter.Fill(this.uLMDataSet.STUDENT);
 
         }
 
