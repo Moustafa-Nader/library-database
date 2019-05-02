@@ -26,10 +26,9 @@ namespace WindowsFormsApplication1
             this.WindowState = FormWindowState.Normal;
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(400, 100);
-            con = new SqlConnection("Data Source=DESKTOP-NF0CFJ8\\SQLEXPRESS;Initial Catalog=mylib;Integrated Security=True");
+			con = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
 
-     
-            comm = new SqlCommand();
+			comm = new SqlCommand();
             comm.Connection = con;
             label5.Hide();
         }
