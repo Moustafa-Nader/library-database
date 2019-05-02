@@ -64,6 +64,12 @@
     <Compile Include="Add Book.designer.cs">
       <DependentUpon>Add Book.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,12 @@
     </Compile>
     <Compile Include="Delete Book.designer.cs">
       <DependentUpon>Delete Book.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteUser.Designer.cs">
+      <DependentUpon>DeleteUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
@@ -130,6 +142,12 @@
     <Compile Include="Show Books List.Designer.cs">
       <DependentUpon>Show Books List.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowList.Designer.cs">
+      <DependentUpon>ShowList.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShowListOfBooks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +180,12 @@
     <Compile Include="Update Book.Designer.cs">
       <DependentUpon>Update Book.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateUser.Designer.cs">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Add Admin.resx">
       <DependentUpon>Add Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +195,9 @@
     <EmbeddedResource Include="Add Book.resx">
       <DependentUpon>Add Book.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Delete Book.resx">
       <DependentUpon>Delete Book.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteUser.resx">
+      <DependentUpon>DeleteUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
@@ -204,6 +234,9 @@
     <EmbeddedResource Include="Show Books List.resx">
       <DependentUpon>Show Books List.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ShowList.resx">
+      <DependentUpon>ShowList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ShowListOfBooks.resx">
       <DependentUpon>ShowListOfBooks.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +261,9 @@
     </Compile>
     <EmbeddedResource Include="Update Book.resx">
       <DependentUpon>Update Book.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateUser.resx">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
