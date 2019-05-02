@@ -19,7 +19,9 @@ namespace WindowsFormsApplication1
         Form1 form1 = new Form1();
         public Sign_Up(Form1 prevForm)
         {
+            
             InitializeComponent();
+
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(400, 100);
             comm.Connection = con;
@@ -372,8 +374,7 @@ namespace WindowsFormsApplication1
         }
         private void Level_Click(object sender, EventArgs e)
         {
-
-        }
+                   }
         private void DoB_Click_1(object sender, EventArgs e)
         {
             
@@ -386,9 +387,9 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormState.PreviousPage.Show();
             this.Hide();
-            FormState.PreviousPage = this;
+            Form1 Mymain = new Form1();
+            Mymain.Show();
         }
     }
 }
