@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,10 @@ namespace WindowsFormsApplication1
 {
     public partial class Admin : Form
     {
+        static Form SignIn = Application.OpenForms["Form1"];
+        public string AdminSignInID = ((Form1)SignIn).AdminSignInID;
+        SqlConnection con = new SqlConnection(connectionstring.myconnectionstring);
+        SqlCommand comm = new SqlCommand();
         public Admin()
         {
             InitializeComponent();
@@ -19,6 +24,8 @@ namespace WindowsFormsApplication1
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(400, 100);
             FormState.AdminForm = this;
+            UserID.Text = AdminSignInID;
+            
         }
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)

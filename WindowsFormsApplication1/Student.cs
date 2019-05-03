@@ -61,9 +61,19 @@ namespace WindowsFormsApplication1
                                "on ACCOUNT.STUDENT_ID = STUDENT.STUDENT_ID " +
                                "where ACCOUNT.STUDENT_ID = " + this.SignInID;
             temp = comm.ExecuteScalar();
-            UserLevel.Text = temp.ToString();
+            UserAge.Text = temp.ToString();
+            //Setting User Expiry Date
+            comm.CommandText = "Select EXPIRATIONDATE " +
+                               "from Student,librarycard,account " +
+                               "where student.student_id = librarycard.student_id " +
+                               "and student.student_id = account.student_id " +
+                               "and User_ID = " + SignInID;
+            temp = comm.ExecuteScalar();
+            UserCardExpiryDate.Text = temp.ToString();
+
             //Settng User ID
             UserID.Text = this.SignInID;
+
             con.Close();
 
         }

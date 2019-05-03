@@ -81,9 +81,9 @@
             this.UserCardExpiryDate.BackColor = System.Drawing.Color.Transparent;
             this.UserCardExpiryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserCardExpiryDate.ForeColor = System.Drawing.Color.Gray;
-            this.UserCardExpiryDate.Location = new System.Drawing.Point(398, 330);
+            this.UserCardExpiryDate.Location = new System.Drawing.Point(356, 330);
             this.UserCardExpiryDate.Name = "UserCardExpiryDate";
-            this.UserCardExpiryDate.Size = new System.Drawing.Size(40, 14);
+            this.UserCardExpiryDate.Size = new System.Drawing.Size(82, 14);
             this.UserCardExpiryDate.TabIndex = 14;
             this.UserCardExpiryDate.Text = "xDate";
             // 
@@ -104,7 +104,7 @@
             this.ExpirationDate.BackColor = System.Drawing.Color.Transparent;
             this.ExpirationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExpirationDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ExpirationDate.Location = new System.Drawing.Point(331, 330);
+            this.ExpirationDate.Location = new System.Drawing.Point(289, 330);
             this.ExpirationDate.Name = "ExpirationDate";
             this.ExpirationDate.Size = new System.Drawing.Size(61, 13);
             this.ExpirationDate.TabIndex = 6;
