@@ -118,6 +118,12 @@
     <Compile Include="ManageBooks.designer.cs">
       <DependentUpon>ManageBooks.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentRentBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentRentBooks.Designer.cs">
+      <DependentUpon>StudentRentBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="RentedBooks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManageBooks.resx">
       <DependentUpon>ManageBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentRentBooks.resx">
+      <DependentUpon>StudentRentBooks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RentedBooks.resx">
       <DependentUpon>RentedBooks.cs</DependentUpon>
