@@ -175,7 +175,8 @@
             this.ProfileIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProfileIcon.TabIndex = 0;
             this.ProfileIcon.TabStop = false;
-            // 
+            //
+
             // button2
             // 
             this.button2.ForeColor = System.Drawing.Color.Black;

@@ -18,12 +18,12 @@ namespace WindowsFormsApplication1
             this.WindowState = FormWindowState.Normal;
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(400, 100);
-            string Query = "select BOOKNAME,AUTHORFIRSTNAME,AUTHORLASTNAME,PUBLISHER " +
+            string Query = "select BOOKNAME as [Book Name],AUTHORFIRSTNAME as Author,PUBLISHER as Publisher " +
                            "from RENTS, BOOK, STUDENT, AUTHORS " +
                            "where RENTS.ISBN = BOOK.ISBN and " +
                            "STUDENT.STUDENT_ID = RENTS.STUDENT_ID and " +
                            "BOOK.AUTHOR_ID = AUTHORS.AUTHOR_ID " +
-                           "and STUDENT.STUDENT_ID = 5";
+                           "and STUDENT.STUDENT_ID = " + FormState.mainform.SignInID;
 			SqlConnection con = new SqlConnection(connectionstring.myconnectionstring);
 			SqlCommand comm = new SqlCommand(Query, con);  //need to rename the Query Column Headings.....
             con.Open();

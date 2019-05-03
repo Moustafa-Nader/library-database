@@ -108,21 +108,21 @@ namespace WindowsFormsApplication1
         {
             string str = "";
            // string isbnstr = ISBN.Text;
-            if (ISBN.Text != "") str = "where BOOK.ISBN = '" + ISBN.Text + "'";
+            if (ISBN.Text != "") str = "where BOOK.ISBN like '%" + ISBN.Text + "%'";
 
-            if (BOOKNAME.Text != "" && str=="") str = "where BOOK.BOOKNAME = '" + BOOKNAME.Text + "'";
-            else if (BOOKNAME.Text != "" && str != "") str += " and BOOK.BOOKNAME = '" + BOOKNAME.Text + "'";
+            if (BOOKNAME.Text != "" && str=="") str = "where BOOK.BOOKNAME like '%" + BOOKNAME.Text + "%'";
+            else if (BOOKNAME.Text != "" && str != "") str += " and BOOK.BOOKNAME like '%" + BOOKNAME.Text + "%'";
 
-            if (PUBLICATIONDATE.Text != "" && str == "") str = "where BOOK.PUBLICATIONDATE = '" + PUBLICATIONDATE.Text + "'";
-            else if (PUBLICATIONDATE.Text != "" && str != "") str += " and BOOK.PUBLICATIONDATE = '" + PUBLICATIONDATE.Text + "'";
+            if (PUBLICATIONDATE.Text != "" && str == "") str = "where BOOK.PUBLICATIONDATE like '%" + PUBLICATIONDATE.Text + "%'";
+            else if (PUBLICATIONDATE.Text != "" && str != "") str += " and BOOK.PUBLICATIONDATE like '%" + PUBLICATIONDATE.Text + "%'";
 
 
-            if (AUTHORNAME.Text != "" && str == "") str = "where AUTHORS.AUTHORFIRSTNAME = '" + AUTHORNAME.Text + "'";
-            else if (AUTHORNAME.Text != "" && str != "") str += " and AUTHORS.AUTHORFIRSTNAME = '" + AUTHORNAME.Text + "'";
+            if (AUTHORNAME.Text != "" && str == "") str = "where AUTHORS.AUTHORFIRSTNAME like '%" + AUTHORNAME.Text + "%'";
+            else if (AUTHORNAME.Text != "" && str != "") str += " and AUTHORS.AUTHORFIRSTNAME like '%" + AUTHORNAME.Text + "%'";
 
             
-            if (CATEGORYNAME.Text != "" && str == "") str = "where CATEGORY.CATEGORYNAME = '" + CATEGORYNAME.Text + "'";
-            else if (CATEGORYNAME.Text != "" && str != "") str += " and CATEGORY.CATEGORYNAME = '" + CATEGORYNAME.Text + "'";
+            if (CATEGORYNAME.Text != "" && str == "") str = "where CATEGORY.CATEGORYNAME like '%" + CATEGORYNAME.Text + "%'";
+            else if (CATEGORYNAME.Text != "" && str != "") str += " and CATEGORY.CATEGORYNAME like '%" + CATEGORYNAME.Text + "%'";
 
             string queu = "SELECT BOOK.ISBN,BOOK.BOOKNAME AS BookName,BOOK.PUBLICATIONDATE AS PublicationDate,AUTHORS.AUTHORFIRSTNAME as Author,  CATEGORY.CATEGORYNAME As Category FROM BOOK JOIN BOOKCATEGORIES ON BOOK.ISBN = BOOKCATEGORIES.ISBN JOIN CATEGORY ON BOOKCATEGORIES.CATEGORY_ID = CATEGORY.CATEGORY_ID JOIN AUTHORS ON BOOK.AUTHOR_ID = AUTHORS.AUTHOR_ID ";
             string qu = "select * from BOOK";
@@ -139,6 +139,17 @@ namespace WindowsFormsApplication1
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.CurrentCell.ColumnIndex.Equals(3) && e.RowIndex != -1)
+            {
+                if (dataGridView1.CurrentCell != null && dataGridView1.CurrentCell.Value != null)
+                {
+
+                }
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

@@ -14,7 +14,7 @@ namespace WindowsFormsApplication1
 
     public partial class Student : Form
     {
-
+        
 		SqlConnection con = new SqlConnection(connectionstring.myconnectionstring);
 		SqlCommand comm = new SqlCommand();
         static Form SignIn = Application.OpenForms["Form1"];
@@ -67,7 +67,7 @@ namespace WindowsFormsApplication1
                                "from Student,librarycard,account " +
                                "where student.student_id = librarycard.student_id " +
                                "and student.student_id = account.student_id " +
-                               "and User_ID = " + SignInID;
+                               "and ACCOUNT.STUDENT_ID = " + SignInID;
             temp = comm.ExecuteScalar();
             UserCardExpiryDate.Text = temp.ToString();
 
@@ -221,7 +221,7 @@ namespace WindowsFormsApplication1
 
         private void RentBookButton_Click(object sender, EventArgs e)
         {
-            RentedBooks myrents = new RentedBooks();
+            StudentRentBooks myrents = new StudentRentBooks();
             myrents.Show();
             this.Hide();
             FormState.PreviousPage = this;
