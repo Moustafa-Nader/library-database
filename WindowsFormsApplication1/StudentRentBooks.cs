@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
             this.WindowState = FormWindowState.Normal;
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(400, 100);
-            List<string> ComboList = new List<string>() { "ISBN", "Book Name" };
+            List<string> ComboList = new List<string>() { "ISBN", "Book Name" , "Publisher" };
             SearchOptionList.DataSource = ComboList;
             comm.Connection = con;
         }
@@ -118,7 +118,7 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Please enter value.");
             else if(index == 0)
             {
-                comm.CommandText = "SELECT BOOK.ISBN,BOOK.BOOKNAME AS BookName,BOOK.PUBLICATIONDATE AS PublicationDate,AUTHORS.AUTHORFIRSTNAME as Author,  CATEGORY.CATEGORYNAME As Category " +
+                comm.CommandText = "SELECT BOOK.ISBN,BOOK.BOOKNAME AS BookName,BOOK.PUBLICATIONDATE AS PublicationDate,AUTHORS.AUTHORFIRSTNAME as Author,  CATEGORY.CATEGORYNAME As Category , PUBLISHER as Publisher  " +
                     "FROM BOOK JOIN BOOKCATEGORIES ON BOOK.ISBN = BOOKCATEGORIES.ISBN JOIN CATEGORY ON BOOKCATEGORIES.CATEGORY_ID = CATEGORY.CATEGORY_ID JOIN AUTHORS ON BOOK.AUTHOR_ID = AUTHORS.AUTHOR_ID " +
                     "where BOOK.ISBN = " + SearchTextBox.Text;
 
@@ -133,7 +133,7 @@ namespace WindowsFormsApplication1
             }
             else if(index == 1)
             {
-                comm.CommandText = "SELECT BOOK.ISBN,BOOK.BOOKNAME AS BookName,BOOK.PUBLICATIONDATE AS PublicationDate,AUTHORS.AUTHORFIRSTNAME as Author,  CATEGORY.CATEGORYNAME As Category " +
+                comm.CommandText = "SELECT BOOK.ISBN,BOOK.BOOKNAME AS BookName,BOOK.PUBLICATIONDATE AS PublicationDate,AUTHORS.AUTHORFIRSTNAME as Author,  CATEGORY.CATEGORYNAME As Category , PUBLISHER as Publisher  " +
                     "FROM BOOK JOIN BOOKCATEGORIES ON BOOK.ISBN = BOOKCATEGORIES.ISBN JOIN CATEGORY ON BOOKCATEGORIES.CATEGORY_ID = CATEGORY.CATEGORY_ID JOIN AUTHORS ON BOOK.AUTHOR_ID = AUTHORS.AUTHOR_ID " +
                     "where BOOK.BOOKNAME like '%" + SearchTextBox.Text + "%'";
 
@@ -142,6 +142,23 @@ namespace WindowsFormsApplication1
                 DataTable mytable = new DataTable();
                 myadapter.Fill(mytable);
                 dataGridView1.DataSource = mytable;
+                for (int i = 0; i < dataGridView1.ColumnCount; i++)
+                    dataGridView1.Columns[i].Width = (dataGridView1.Width / dataGridView1.ColumnCount) - 1;
+                con.Close();
+            }
+            else if(index == 2)
+            {
+                comm.CommandText = "SELECT BOOK.ISBN,BOOK.BOOKNAME AS BookName,BOOK.PUBLICATIONDATE AS PublicationDate,AUTHORS.AUTHORFIRSTNAME as Author,  CATEGORY.CATEGORYNAME As Category, PUBLISHER as Publisher " +
+                                    "FROM BOOK JOIN BOOKCATEGORIES ON BOOK.ISBN = BOOKCATEGORIES.ISBN JOIN CATEGORY ON BOOKCATEGORIES.CATEGORY_ID = CATEGORY.CATEGORY_ID JOIN AUTHORS ON BOOK.AUTHOR_ID = AUTHORS.AUTHOR_ID " +
+                                    "where BOOK.Publisher like '%" + SearchTextBox.Text + "%'";
+
+                con.Open();
+                SqlDataAdapter myadapter = new SqlDataAdapter(comm);
+                DataTable mytable = new DataTable();
+                myadapter.Fill(mytable);
+                dataGridView1.DataSource = mytable;
+                for (int i = 0; i < dataGridView1.ColumnCount; i++)
+                    dataGridView1.Columns[i].Width = (dataGridView1.Width / dataGridView1.ColumnCount) - 1;
                 con.Close();
             }
         }

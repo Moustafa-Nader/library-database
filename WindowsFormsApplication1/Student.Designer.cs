@@ -94,7 +94,7 @@
             this.RentedBooksButton.Name = "RentedBooksButton";
             this.RentedBooksButton.Size = new System.Drawing.Size(199, 25);
             this.RentedBooksButton.TabIndex = 5;
-            this.RentedBooksButton.Text = "Rented books";
+            this.RentedBooksButton.Text = "My Rents";
             this.RentedBooksButton.UseVisualStyleBackColor = true;
             this.RentedBooksButton.Click += new System.EventHandler(this.RentedBooksButton_Click);
             // 
