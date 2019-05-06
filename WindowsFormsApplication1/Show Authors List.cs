@@ -19,15 +19,6 @@ namespace WindowsFormsApplication1
             this.WindowState = FormWindowState.Normal;
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(400, 100);
-        }
-
-        private void MainPanel_Paint(object sender, PaintEventArgs e)
-        {
-            MainPanel.BackColor = Color.FromArgb(180, 0, 0, 0);
-        }
-
-        private void ShowListButton_Click(object sender, EventArgs e)
-        {
             SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
             connection.Open();
             SqlCommand command = new SqlCommand("", connection);
@@ -38,7 +29,18 @@ namespace WindowsFormsApplication1
             DataGridView.DataSource = data_table;
             for (int i = 0; i < DataGridView.ColumnCount; i++)
                 DataGridView.Columns[i].Width = (DataGridView.Width / DataGridView.ColumnCount) - 1;
+            //DataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             connection.Close();
+        }
+
+        private void MainPanel_Paint(object sender, PaintEventArgs e)
+        {
+            MainPanel.BackColor = Color.FromArgb(180, 0, 0, 0);
+        }
+
+        private void ShowListButton_Click(object sender, EventArgs e)
+        {
+           
         }
 
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -53,13 +55,18 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormState.PreviousPage.Show();
-            this.Hide();
+            
         }
 
         private void Show_Authors_List_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            FormState.PreviousPage.Show();
+            this.Hide();
         }
     }
 }

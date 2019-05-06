@@ -64,8 +64,7 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormState.AdminForm.Show();
-            this.Hide();
+           
         }
 
         
@@ -73,6 +72,12 @@ namespace WindowsFormsApplication1
         private void ManageBooks_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            FormState.AdminForm.Show();
+            this.Hide();
         }
     }
 }

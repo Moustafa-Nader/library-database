@@ -29,6 +29,8 @@ namespace WindowsFormsApplication1
         {
             Show_Authors_List list = new Show_Authors_List();
             list.Show();
+            this.Hide();
+            FormState.PreviousPage = this;
 
         }
 
@@ -36,12 +38,16 @@ namespace WindowsFormsApplication1
         {
             Add_Author a1 = new Add_Author();
             a1.Show();
+            this.Hide();
+            FormState.PreviousPage = this;
         }
 
         private void DeleteAuthor_Click(object sender, EventArgs e)
         {
             Delete_Author a1 = new Delete_Author();
             a1.Show();
+            this.Hide();
+            FormState.PreviousPage = this;
         }
 
         private void Manage_Authors_Load(object sender, EventArgs e)
@@ -51,13 +57,19 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormState.AdminForm.Show();
-            this.Hide();
+            
         }
 
         private void Manage_Authors_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            FormState.AdminForm.Show();
+            this.Hide();
+
         }
     }
 }

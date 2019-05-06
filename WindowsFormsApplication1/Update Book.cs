@@ -20,6 +20,21 @@ namespace WindowsFormsApplication1
             this.WindowState = FormWindowState.Normal;
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(400, 100);
+
+            SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
+            SqlCommand sqlcommand = new SqlCommand();
+            sqlcommand.Connection = connection;
+            connection.Open();
+
+
+            sqlcommand.CommandText = "select * from BOOK";
+            SqlDataAdapter myadapter = new SqlDataAdapter(sqlcommand);
+            DataTable mytable = new DataTable();
+            myadapter.Fill(mytable);
+            DataGridView.DataSource = mytable;
+            for (int i = 0; i < DataGridView.ColumnCount; i++)
+                DataGridView.Columns[i].Width = (DataGridView.Width / DataGridView.ColumnCount) - 1;
+            connection.Close();
         }
 
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -40,7 +55,7 @@ namespace WindowsFormsApplication1
                 DataGridView.Columns[i].Width = (DataGridView.Width / DataGridView.ColumnCount) - 1;
             foreach (DataRow data_row in data_table.Rows)
             {
-                ISBNTextBox.Text = data_row["ISBN"].ToString();
+                //ISBNTextBox.Text = data_row["ISBN"].ToString();
                 IDTextBox.Text = data_row["AUTHOR_ID"].ToString();
                 NameTextBox.Text = data_row["BOOKNAME"].ToString();
                 PublisherTextBox.Text = data_row["PUBLISHER"].ToString();
@@ -57,6 +72,14 @@ namespace WindowsFormsApplication1
             command.CommandType = CommandType.Text;
             command.CommandText = "update BOOK set AUTHOR_ID="+IDTextBox.Text+",BOOKNAME='"+NameTextBox.Text+"',PUBLISHER='"+PublisherTextBox.Text+"',PUBLICATIONDATE="+ DateTimePicker.Value.Day + "/" + DateTimePicker.Value.Month + "/" + DateTimePicker.Value.Year+" Where ISBN="+cell+"";
             command.ExecuteNonQuery();
+            
+            command.CommandText = "select * from BOOK";
+            DataTable data_table = new DataTable();
+            SqlDataAdapter data_adapter = new SqlDataAdapter(command);
+            data_adapter.Fill(data_table);
+            DataGridView.DataSource = data_table;
+            for (int i = 0; i < DataGridView.ColumnCount; i++)
+                DataGridView.Columns[i].Width = (DataGridView.Width / DataGridView.ColumnCount) - 1;
             connection.Close();
         }
 
@@ -67,32 +90,23 @@ namespace WindowsFormsApplication1
 
         private void ShowList_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
-            connection.Open();
-            SqlCommand command = new SqlCommand("", connection);
-            command.CommandText = "select * from BOOK";
-            DataTable data_table = new DataTable();
-            SqlDataAdapter data_adapter = new SqlDataAdapter(command);
-            data_adapter.Fill(data_table);
-            DataGridView.DataSource = data_table;
-            connection.Close();
+            
         }
 
         private void Update_Book_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormState.PreviousPage.Show();
-            this.Hide();
-            
-        }
-
+        
         private void Update_Book_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            FormState.PreviousPage.Show();
+            this.Hide();
         }
     }
 }

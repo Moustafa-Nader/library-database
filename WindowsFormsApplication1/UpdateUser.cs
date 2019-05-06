@@ -17,8 +17,25 @@ namespace WindowsFormsApplication1
         public UpdateUser()
 
         {
-            
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(400, 100);
+
+            SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
+            SqlCommand sqlcommand = new SqlCommand();
+            sqlcommand.Connection = connection;
+            connection.Open();
+
+
+            sqlcommand.CommandText = "select * from STUDENT";
+            SqlDataAdapter myadapter = new SqlDataAdapter(sqlcommand);
+            DataTable mytable = new DataTable();
+            myadapter.Fill(mytable);
+            DataGridView.DataSource = mytable;
+            for (int i = 0; i < DataGridView.ColumnCount; i++)
+                DataGridView.Columns[i].Width = (DataGridView.Width / DataGridView.ColumnCount) - 1;
+            connection.Close();
         }
 
         private void UpdateUser_Load(object sender, EventArgs e)
@@ -43,48 +60,29 @@ namespace WindowsFormsApplication1
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlconnection = new SqlConnection();
-
-            SqlCommand sqlcommand = new SqlCommand();
-            sqlcommand.Connection = sqlconnection;
-
-            sqlconnection.Open();
-
-            sqlcommand.CommandText = "select * from student";
-            sqlcommand.ExecuteNonQuery();
-            for (int i = 0; i < dataGridView1.ColumnCount; i++)
-                dataGridView1.Columns[i].Width = (dataGridView1.Width / dataGridView1.ColumnCount) - 1;
-            SqlDataAdapter myadapter = new SqlDataAdapter(sqlcommand);
-            DataTable mytable = new DataTable();
-            myadapter.Fill(mytable);
-            dataGridView1.DataSource = mytable;
-            sqlconnection.Close();
+            
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            cell = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["user_id"].FormattedValue.ToString());
-                // TRY TO FIND A WAY TO SELECT A CELL WITHOUT BREAKING
-                
-                
+            cell = Convert.ToInt32(DataGridView.Rows[e.RowIndex].Cells["STUDENT_ID"].FormattedValue.ToString());
+                                
                 SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
                 connection.Open();
-                
                 //MessageBox.Show("cell " + cell);
                 SqlCommand command = new SqlCommand("", connection);
-                command.CommandText = "select * from student where user_id=" + cell + "";
+                command.CommandText = "select * from student where STUDENT_ID=" + cell + "";
                 command.ExecuteNonQuery();
-            for (int i = 0; i < dataGridView1.ColumnCount; i++)
-                dataGridView1.Columns[i].Width = (dataGridView1.Width / dataGridView1.ColumnCount) - 1;
+            for (int i = 0; i < DataGridView.ColumnCount; i++)
+                DataGridView.Columns[i].Width = (DataGridView.Width / DataGridView.ColumnCount) - 1;
             DataTable data_table = new DataTable();
                 SqlDataAdapter data_adapter = new SqlDataAdapter(command);
                 data_adapter.Fill(data_table);
                
                 foreach (DataRow data_row in data_table.Rows)
                 {
-                    textBox2.Text = data_row["user_id"].ToString();
-                    textBox1.Text = data_row["student_id"].ToString();
+                    //textBox2.Text = data_row["user_id"].ToString();
+                    //textBox1.Text = data_row["student_id"].ToString();
                     textBox3.Text = data_row["studentfirstname"].ToString();
                     textBox5.Text = data_row["studentlastname"].ToString();
                     textBox7.Text = data_row["age"].ToString();
@@ -123,21 +121,27 @@ namespace WindowsFormsApplication1
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlconnection = new SqlConnection("Data Source=DESKTOP-SQ0RA99\\SQL;Initial Catalog=ULM;Integrated Security=True");
+            SqlConnection sqlconnection = new SqlConnection(connectionstring.myconnectionstring);
 
             SqlCommand sqlcommand = new SqlCommand();
             sqlcommand.Connection = sqlconnection;
 
             sqlconnection.Open();
 
-            sqlcommand.CommandText = "update student set student_id=" + textBox1.Text + ",studentfirstname='" + textBox3.Text + "',studentlastname='" + textBox5.Text + "',age='" + textBox7.Text + "',year='" + textBox6.Text + "',dateofbirth=" + dateTimePicker1.Value.Day + "/" + dateTimePicker1.Value.Month + "/" + dateTimePicker1.Value.Year + " Where user_id=" + cell + "";
+            sqlcommand.CommandText = "update student set studentfirstname='" + textBox3.Text + "',studentlastname='" + textBox5.Text + "',age='" + textBox7.Text + "',year='" + textBox6.Text + "',dateofbirth=" + dateTimePicker1.Value.Day + "/" + dateTimePicker1.Value.Month + "/" + dateTimePicker1.Value.Year + " Where STUDENT_ID=" + cell + "";
             sqlcommand.ExecuteNonQuery();
-            for (int i = 0; i < dataGridView1.ColumnCount; i++)
-                dataGridView1.Columns[i].Width = (dataGridView1.Width / dataGridView1.ColumnCount) - 1;
+            for (int i = 0; i < DataGridView.ColumnCount; i++)
+                DataGridView.Columns[i].Width = (DataGridView.Width / DataGridView.ColumnCount) - 1;
+
+            sqlcommand.CommandText = "select * from student";
+            sqlcommand.ExecuteNonQuery();
+            for (int i = 0; i < DataGridView.ColumnCount; i++)
+                DataGridView.Columns[i].Width = (DataGridView.Width / DataGridView.ColumnCount) - 1;
             SqlDataAdapter myadapter = new SqlDataAdapter(sqlcommand);
             DataTable mytable = new DataTable();
             myadapter.Fill(mytable);
-            dataGridView1.DataSource = mytable;
+            DataGridView.DataSource = mytable;
+
             sqlconnection.Close();
 
         }
@@ -145,6 +149,17 @@ namespace WindowsFormsApplication1
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            FormState.PreviousPage.Show();
+            this.Hide();
         }
     }
 }

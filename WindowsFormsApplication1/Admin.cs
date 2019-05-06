@@ -15,7 +15,7 @@ namespace WindowsFormsApplication1
     {
         static Form SignIn = Application.OpenForms["Form1"];
         public string AdminSignInID = ((Form1)SignIn).AdminSignInID;
-        SqlConnection con = new SqlConnection(connectionstring.myconnectionstring);
+        SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
         SqlCommand comm = new SqlCommand();
         public Admin()
         {
@@ -25,7 +25,19 @@ namespace WindowsFormsApplication1
             this.Location = new Point(400, 100);
             FormState.AdminForm = this;
             UserID.Text = AdminSignInID;
-            
+
+                comm.Connection = connection;
+                connection.Open();
+
+                comm.CommandText = "Select Username " +
+                                   "From ACCOUNT inner Join ADMIN " +
+                                   "on ACCOUNT.ADMIN_ID = ADMIN.ADMIN_ID " +
+                                   "where ACCOUNT.ADMIN_ID = " + this.AdminSignInID;
+                object temp = comm.ExecuteScalar();
+                Username.Text = temp.ToString();
+                connection.Close();
+
+
         }
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)
@@ -76,14 +88,18 @@ namespace WindowsFormsApplication1
         {
             // Form SignIn = Application.OpenForms["Form1"];
             // string SignInID = ((Form1)SignIn).SignInID;
-            FormState.mainform.ShowAndEmpty();
-           
-            this.Hide();
+            
         }
 
         private void Admin_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            FormState.mainform.ShowAndEmpty();
+            this.Hide();
         }
     }
 }

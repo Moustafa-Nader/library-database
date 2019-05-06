@@ -231,5 +231,16 @@ namespace WindowsFormsApplication1
         {
             Application.Exit();
         }
+
+        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void Label1_Click_1(object sender, EventArgs e)
+        {
+            FormState.mainform.ShowAndEmpty();
+            this.Hide();
+        }
     }
 }

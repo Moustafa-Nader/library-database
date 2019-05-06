@@ -16,6 +16,22 @@ namespace WindowsFormsApplication1
         public ShowList()
         {
             InitializeComponent();
+            SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
+            this.WindowState = FormWindowState.Normal;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(400, 100);
+            connection.Open();
+            SqlCommand command = new SqlCommand("", connection);
+
+            command.CommandText = "select * from account";
+            command.ExecuteNonQuery();
+            for (int i = 0; i < DataGridView.ColumnCount; i++)
+                DataGridView.Columns[i].Width = (DataGridView.Width / DataGridView.ColumnCount) - 1;
+            SqlDataAdapter myadapter = new SqlDataAdapter(command);
+            DataTable mytable = new DataTable();
+            myadapter.Fill(mytable);
+            DataGridView.DataSource = mytable;
+            connection.Close();
         }
 
         private void ShowList_Load(object sender, EventArgs e)
@@ -28,24 +44,22 @@ namespace WindowsFormsApplication1
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
-            SqlConnection sqlconnection = new SqlConnection("Data Source=DESKTOP-SQ0RA99\\SQL;Initial Catalog=ULM;Integrated Security=True");
-
-            SqlCommand sqlcommand = new SqlCommand();
-            sqlcommand.Connection = sqlconnection;
-         
-            sqlconnection.Open();
-
-            sqlcommand.CommandText = "select * from account";
-            sqlcommand.ExecuteNonQuery();
-          for (int i = 0; i < dataGridView1.ColumnCount; i++)
-              dataGridView1.Columns[i].Width = (dataGridView1.Width / dataGridView1.ColumnCount) - 1;
-            SqlDataAdapter myadapter = new SqlDataAdapter(sqlcommand);
-            DataTable mytable = new DataTable();
-            myadapter.Fill(mytable);
-            dataGridView1.DataSource = mytable;
-            sqlconnection.Close();
         }
 
-        
+        private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            FormState.PreviousPage.Show();
+            this.Hide();
+        }
+
+        private void MainPanel_Paint(object sender, PaintEventArgs e)
+        {
+            MainPanel.BackColor = Color.FromArgb(180, 0, 0, 0);
+        }
     }
 }

@@ -20,6 +20,21 @@ namespace WindowsFormsApplication1
             this.WindowState = FormWindowState.Normal;
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(400, 100);
+
+            SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
+            SqlCommand sqlcommand = new SqlCommand();
+            sqlcommand.Connection = connection;
+            connection.Open();
+
+
+            sqlcommand.CommandText = "select * from BOOK";
+            SqlDataAdapter myadapter = new SqlDataAdapter(sqlcommand);
+            DataTable mytable = new DataTable();
+            myadapter.Fill(mytable);
+            DataGridView.DataSource = mytable;
+            for (int i = 0; i < DataGridView.ColumnCount; i++)
+                DataGridView.Columns[i].Width = (DataGridView.Width / DataGridView.ColumnCount) - 1;
+            connection.Close();
         }
 
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -32,18 +47,39 @@ namespace WindowsFormsApplication1
             SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable TempTable = new DataTable();
             connection.Open();
-
-            command.CommandText = " delete from BOOK where BOOK.ISBN='" + ISBNTextBox.Text + "'";
+            command.CommandText = "select count(*) from BOOK where ISBN='" + ISBNTextBox.Text + "'";
             command.ExecuteNonQuery();
-            command.CommandText = "select * from BOOK";
-            SqlDataAdapter myadapter = new SqlDataAdapter(command);
-            DataTable mytable = new DataTable();
-            myadapter.Fill(mytable);
-            DataGridView.DataSource = mytable;
-            for (int i = 0; i < DataGridView.ColumnCount; i++)
-                DataGridView.Columns[i].Width = (DataGridView.Width / DataGridView.ColumnCount) - 1;
-            connection.Close();
+            adapter.Fill(TempTable);
+            if (TempTable.Rows[0][0].ToString() == "0")
+            {
+                Error.Text = "This ISBN doesn't exist.";
+                Error.Show();
+                connection.Close();
+
+            }
+            else
+            {
+                command.CommandText = " delete from RENTS where RENTS.ISBN='" + ISBNTextBox.Text + "'";
+                command.ExecuteNonQuery();
+
+                command.CommandText = " delete from BOOKCATEGORIES where BOOKCATEGORIES.ISBN='" + ISBNTextBox.Text + "'";
+                command.ExecuteNonQuery();
+
+                command.CommandText = " delete from BOOK where BOOK.ISBN='" + ISBNTextBox.Text + "'";
+                command.ExecuteNonQuery();
+
+                command.CommandText = "select * from BOOK";
+                SqlDataAdapter myadapter = new SqlDataAdapter(command);
+                DataTable mytable = new DataTable();
+                myadapter.Fill(mytable);
+                DataGridView.DataSource = mytable;
+                for (int i = 0; i < DataGridView.ColumnCount; i++)
+                    DataGridView.Columns[i].Width = (DataGridView.Width / DataGridView.ColumnCount) - 1;
+                connection.Close();
+            }
         }
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)
@@ -59,14 +95,19 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormState.PreviousPage.Show();
-            this.Hide();
+            
 
         }
 
         private void Delete_Book_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            FormState.PreviousPage.Show();
+            this.Hide();
         }
     }
 }

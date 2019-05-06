@@ -392,9 +392,14 @@ namespace WindowsFormsApplication1
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			this.Hide();
-			Form1 myMain = new Form1();
-			myMain.Show();
+			
 		}
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 myMain = new Form1();
+            myMain.Show();
+        }
     }
 }

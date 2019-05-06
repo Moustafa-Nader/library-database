@@ -16,6 +16,24 @@ namespace WindowsFormsApplication1
         public DeleteUser()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(400, 100);
+
+            SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
+            SqlCommand sqlcommand = new SqlCommand();
+            sqlcommand.Connection = connection;
+            connection.Open();
+
+
+            sqlcommand.CommandText = "select * from STUDENT";
+            SqlDataAdapter myadapter = new SqlDataAdapter(sqlcommand);
+            DataTable mytable = new DataTable();
+            myadapter.Fill(mytable);
+            DataGridView.DataSource = mytable;
+            for (int i = 0; i < DataGridView.ColumnCount; i++)
+                DataGridView.Columns[i].Width = (DataGridView.Width / DataGridView.ColumnCount) - 1;
+            connection.Close();
         }
 
         private void DeleteUser_Load(object sender, EventArgs e)
@@ -33,34 +51,48 @@ namespace WindowsFormsApplication1
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlconnection = new SqlConnection("Data Source=DESKTOP-SQ0RA99\\SQL;Initial Catalog=ULM;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(connectionstring.myconnectionstring);
+            SqlCommand command = new SqlCommand();
+            command.Connection = connection;
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable TempTable = new DataTable();
+            connection.Open();
+            command.CommandText = "select count(*) from STUDENT where STUDENT_ID='" + ID_textBox.Text + "'";
+            command.ExecuteNonQuery();
+            adapter.Fill(TempTable);
+            if (TempTable.Rows[0][0].ToString() == "0")
+            {
+                label3.Text = "This ID doesn't exist.";
+                label3.Show();
+                connection.Close();
 
-            SqlCommand sqlcommand = new SqlCommand();
-            sqlcommand.Connection = sqlconnection;
-            sqlconnection.Open();
-            sqlcommand.CommandText = " delete from librarycard where librarycard.student_ID='" + textBox1.Text + "'";
-            sqlcommand.ExecuteNonQuery();
+            }
+            else {
 
-            sqlcommand.CommandText = " delete from rents where rents.student_ID='" + textBox1.Text + "'";
-            sqlcommand.ExecuteNonQuery();
-            sqlcommand.CommandText = " delete from account where account.student_ID='" + textBox1.Text + "' ";
-            sqlcommand.ExecuteNonQuery();
-           
-            sqlcommand.CommandText = " delete from student where student.student_ID='" + textBox1.Text + "' ";
-            sqlcommand.ExecuteNonQuery();
+                command.CommandText = " delete from librarycard where librarycard.student_ID='" + ID_textBox.Text + "'";
+                command.ExecuteNonQuery();
 
-            
+                command.CommandText = " delete from rents where rents.student_ID='" + ID_textBox.Text + "'";
+                command.ExecuteNonQuery();
 
-            for (int i = 0; i < dataGridView1.ColumnCount; i++)
-                dataGridView1.Columns[i].Width = (dataGridView1.Width / dataGridView1.ColumnCount) - 1;
-            sqlcommand.CommandText = "select * from student";
-            SqlDataAdapter myadapter = new SqlDataAdapter(sqlcommand);
-            DataTable mytable = new DataTable();
-            myadapter.Fill(mytable);
-            dataGridView1.DataSource = mytable;
-            sqlconnection.Close();
+                command.CommandText = " delete from account where account.student_ID='" + ID_textBox.Text + "' ";
+                command.ExecuteNonQuery();
+
+                command.CommandText = " delete from student where student.student_ID='" + ID_textBox.Text + "' ";
+                command.ExecuteNonQuery();
+
+
+
+                for (int i = 0; i < DataGridView.ColumnCount; i++)
+                    DataGridView.Columns[i].Width = (DataGridView.Width / DataGridView.ColumnCount) - 1;
+                command.CommandText = "select * from student";
+                SqlDataAdapter myadapter = new SqlDataAdapter(command);
+                DataTable mytable = new DataTable();
+                myadapter.Fill(mytable);
+                DataGridView.DataSource = mytable;
+                connection.Close();
+            }
         }
-
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -69,6 +101,12 @@ namespace WindowsFormsApplication1
         private void Label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+            FormState.PreviousPage.Show();
+            this.Hide();
         }
     }
 }
