@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1
         string Password;
         public string SignInID;
         public string AdminSignInID;
-        string serverName = "LAPTOP-VVA7D5A9\\SQLEXPRESS";
+        string serverName = "LAPTOP-1IE4L68L\\SQLEXPRESS";
         string Database = "ULM";
         
        

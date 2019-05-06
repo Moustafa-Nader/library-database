@@ -232,7 +232,6 @@ namespace WindowsFormsApplication1
             string StudentID = IDTextbox.Text;
             string Level = LevelComboBox.Text;
             string DateofBirth = DoBTimePicker.Text;
-
             //Console.WriteLine(DateofBirth);
 
             con.Open();
@@ -318,13 +317,19 @@ namespace WindowsFormsApplication1
                     else
                     {
                         comm2.CommandText = "Select MAX(ACCOUNT.USER_ID) from ACCOUNT";
-                        comm.CommandText = "insert into STUDENT values (" + Int32.Parse(StudentID) + ", NULL , " +"'" + FirstName + "' , '" + LastName + "' , " +calculateAge(DateofBirth) + ",'" + calculateDate(DateofBirth) + "'," + convertLevel(Level) + ")";
+                        comm.CommandText = "insert into STUDENT values (" + Int32.Parse(StudentID) +",'" + FirstName + "' , '" + LastName + "' , " +calculateAge(DateofBirth) + ",'" + calculateDate(DateofBirth) + "'," + convertLevel(Level) + ")";
                         comm.ExecuteNonQuery();
                         //Console.WriteLine(comm.CommandText);
                         object num = comm2.ExecuteScalar();
                         int temp = Int32.Parse(num.ToString());
                         temp++;
+                        DateTime currentDate = DateTime.Now;
+                        int currYear = currentDate.Year + 1;
+                        
                         comm.CommandText = "insert into ACCOUNT values (" + temp + ",NULL," + Int32.Parse(StudentID) + ",'" + UsernameText + "','" + Password + "','" + Email + "')";
+                        comm.ExecuteNonQuery();
+                        comm.CommandText = "set dateformat dmy \n insert into LIBRARYCARD values (" + Int32.Parse(StudentID) + ",CAST('" + currentDate.Day + "/" + currentDate.Month + "/" + currYear + " " + currentDate.Hour + ":" + currentDate.Minute + ":" + currentDate.Second + "' AS DATETIME))";
+                        Console.WriteLine(comm.CommandText);
                         comm.ExecuteNonQuery();
                         //Console.WriteLine(comm.CommandText);
                         Hide();
