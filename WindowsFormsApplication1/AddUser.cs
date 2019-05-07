@@ -17,7 +17,8 @@ namespace WindowsFormsApplication1
         public AddUser()
         {
             InitializeComponent();
-            SqlConnection sqlconnection = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+            //SqlConnection sqlconnection = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+            SqlConnection sqlconnection = new SqlConnection(connectionstring.myconnectionstring);
             SqlCommand sqlcommand = new SqlCommand();
             sqlcommand.Connection = sqlconnection;
             sqlconnection.Open();
@@ -64,7 +65,8 @@ namespace WindowsFormsApplication1
             string StudentID = StudentID_textBox.Text;
             string Level = Level_textBox.Text;
 
-            SqlConnection sqlconnection = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+            //SqlConnection sqlconnection = new SqlConnection("Data Source=LAPTOP-HTO4DVSU\\SQLEXPRESS;Initial Catalog=ULM;Integrated Security=True");
+            SqlConnection sqlconnection = new SqlConnection(connectionstring.myconnectionstring);
             SqlCommand sqlcommand = new SqlCommand();
             SqlCommand sqlcommand2 = new SqlCommand();
             sqlcommand.Connection = sqlconnection;
@@ -87,8 +89,8 @@ namespace WindowsFormsApplication1
             }
             else if (UsernameText.Length == 0)
             {
-                label2.Text = "Username field cannot be empty!";
-                label2.Show();
+                Error.Text = "Username field cannot be empty!";
+                Error.Show();
             }
             else if (Password.Length == 0)
             {
@@ -130,7 +132,7 @@ namespace WindowsFormsApplication1
                     int currYear = currentDate.Year + 1;
                     sqlcommand.CommandText = "insert into ACCOUNT values (" + temp + ",NULL," + Int32.Parse(StudentID) + ",'" + UsernameText + "','" + Password + "','" + Email + "')";
                     sqlcommand.ExecuteNonQuery();
-                    sqlcommand.CommandText = "set dateformat dmy \n insert into LIBRARYCARD values (" + Int32.Parse(StudentID) + ",CAST('" + currentDate.Day + "/" + currentDate.Month + "/" + currYear + " " + currentDate.Hour + ":" + currentDate.Minute + ":" + currentDate.Second + "' AS DATETIME))";
+                    sqlcommand.CommandText = "set dateformat dmy \n insert into LIBRARYCARD values (" + Int32.Parse(StudentID) + ",CAST('" + currYear + "/" + currentDate.Month + "/" + currentDate.Day + " " + currentDate.Hour + ":" + currentDate.Minute + ":" + currentDate.Second + "' AS DATETIME))";
 
 
                     for (int i = 0; i < dataGridView1.ColumnCount; i++)

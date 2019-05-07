@@ -31,15 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteUser));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Back = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.Error = new System.Windows.Forms.Label();
             this.ID_textBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DataGridView = new System.Windows.Forms.DataGridView();
             this.sTUDENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Back = new System.Windows.Forms.Label();
-            this.Error = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).BeginInit();
@@ -61,6 +61,30 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
+            // Back
+            // 
+            this.Back.AutoSize = true;
+            this.Back.BackColor = System.Drawing.Color.Transparent;
+            this.Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Back.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.Back.Location = new System.Drawing.Point(-155, -130);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(58, 20);
+            this.Back.TabIndex = 29;
+            this.Back.Text = "< Back";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(238, 98);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 20);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "label3";
+            this.label3.Visible = false;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(422, 91);
@@ -71,6 +95,18 @@
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // Error
+            // 
+            this.Error.AutoSize = true;
+            this.Error.BackColor = System.Drawing.Color.Transparent;
+            this.Error.ForeColor = System.Drawing.Color.Red;
+            this.Error.Location = new System.Drawing.Point(19, -49);
+            this.Error.Name = "Error";
+            this.Error.Size = new System.Drawing.Size(44, 20);
+            this.Error.TabIndex = 30;
+            this.Error.Text = "Error";
+            this.Error.Visible = false;
             // 
             // ID_textBox
             // 
@@ -95,9 +131,7 @@
             // 
             // DataGridView
             // 
-            this.DataGridView.AutoGenerateColumns = false;
             this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridView.DataSource = this.sTUDENTBindingSource;
             this.DataGridView.Location = new System.Drawing.Point(23, 155);
             this.DataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DataGridView.Name = "DataGridView";
@@ -108,30 +142,6 @@
             // sTUDENTBindingSource
             // 
             this.sTUDENTBindingSource.DataMember = "STUDENT";
-            // 
-            // Back
-            // 
-            this.Back.AutoSize = true;
-            this.Back.BackColor = System.Drawing.Color.Transparent;
-            this.Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Back.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.Back.Location = new System.Drawing.Point(-155, -130);
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(58, 20);
-            this.Back.TabIndex = 29;
-            this.Back.Text = "< Back";
-            // 
-            // Error
-            // 
-            this.Error.AutoSize = true;
-            this.Error.BackColor = System.Drawing.Color.Transparent;
-            this.Error.ForeColor = System.Drawing.Color.Red;
-            this.Error.Location = new System.Drawing.Point(19, -49);
-            this.Error.Name = "Error";
-            this.Error.Size = new System.Drawing.Size(44, 20);
-            this.Error.TabIndex = 30;
-            this.Error.Text = "Error";
-            this.Error.Visible = false;
             // 
             // label2
             // 
@@ -145,18 +155,6 @@
             this.label2.TabIndex = 29;
             this.label2.Text = "< Back";
             this.label2.Click += new System.EventHandler(this.Label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(238, 98);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 20);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "label3";
-            this.label3.Visible = false;
             // 
             // DeleteUser
             // 

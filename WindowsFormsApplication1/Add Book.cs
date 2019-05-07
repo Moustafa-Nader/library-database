@@ -68,7 +68,7 @@ namespace WindowsFormsApplication1
             {
 
                 //command.CommandType = CommandType.Text;
-                command.CommandText = "insert into BOOK values(" + ISBNTextBox.Text + "," + IDTextBox.Text + ",'" + NameTextBox.Text + "','" + PublisherTextBox.Text + "'," + DateTimePicker.Value.Day + "/" + DateTimePicker.Value.Month + "/" + DateTimePicker.Value.Year + ")";
+                command.CommandText = "insert into BOOK values(" + ISBNTextBox.Text + "," + IDTextBox.Text + ",'" + NameTextBox.Text + "','" + PublisherTextBox.Text + "','" + DateTimePicker.Value.Year + "/" + DateTimePicker.Value.Month + "/" + DateTimePicker.Value.Day + "')";
                 command.ExecuteNonQuery();
                 command.CommandText = "select * from BOOK";
                 DataTable data_table = new DataTable();
