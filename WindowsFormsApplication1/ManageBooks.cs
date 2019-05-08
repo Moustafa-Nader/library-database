@@ -79,5 +79,13 @@ namespace WindowsFormsApplication1
             FormState.AdminForm.Show();
             this.Hide();
         }
+
+        private void ReportButton_Click(object sender, EventArgs e)
+        {
+            BookReport f = new BookReport();
+            f.Show();
+            Hide();
+            FormState.PreviousPage = this;
+        }
     }
 }
